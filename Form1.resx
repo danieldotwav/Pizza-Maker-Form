@@ -120,25 +120,64 @@
   <metadata name="Header.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="HeaderLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="ExitButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="HeaderLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="JalepenosLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="PizzaSize.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="CrustType.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="groupBoxSizeAndCrustContainer.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="CrustLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="SizeLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="CrustLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="SizeLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="groupBoxToppingsContainer.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="filledButtonRight.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="filledButtonLeft.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="filledButtonCenter.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="radioButtonEmptyToppingDisplay.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="JalapenosLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="MushroomsLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="SausageLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="OnionsLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="HamLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="PepperoniLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ToppingsLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="groupBoxTopping1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -156,13 +195,19 @@
   <metadata name="groupBoxTopping5.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="JalepenosLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="filledButtonCenter.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="radioButtonEmptyToppingDisplay.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="JalapenosLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="MushroomsLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="SausageLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="OnionsLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="HamLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -171,7 +216,13 @@
   <metadata name="PepperoniLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="ToppingsLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="groupBoxTopping1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="radioButtonPepperoniNone.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="radioButtonPepperoniRight.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -181,6 +232,9 @@
     <value>True</value>
   </metadata>
   <metadata name="radioButtonPepperoniLeft.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="radioButtonPepperoniNone.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="radioButtonPepperoniRight.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -195,6 +249,9 @@
   <metadata name="groupBoxTopping2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="radioButtonHamNone.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="radioButtonHamCenter.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -202,6 +259,9 @@
     <value>True</value>
   </metadata>
   <metadata name="radioButtonHamLeft.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="radioButtonHamNone.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="radioButtonHamCenter.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -216,25 +276,34 @@
   <metadata name="groupBoxTopping3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="radioButtonSausageCenter.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="radioButtonOnionsNone.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="radioButtonSausageRight.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="radioButtonOnionsCenter.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="radioButtonSausageLeft.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="radioButtonOnionsRight.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="radioButtonSausageCenter.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="radioButtonOnionsLeft.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="radioButtonSausageRight.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="radioButtonOnionsNone.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="radioButtonSausageLeft.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="radioButtonOnionsCenter.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="radioButtonOnionsRight.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="radioButtonOnionsLeft.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="groupBoxTopping4.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="radioButtonMushroomsNone.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="radioButtonMushroomsCenter.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -244,6 +313,9 @@
     <value>True</value>
   </metadata>
   <metadata name="radioButtonMushroomsLeft.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="radioButtonMushroomsNone.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="radioButtonMushroomsCenter.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -258,25 +330,175 @@
   <metadata name="groupBoxTopping5.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="radioButtonJalepenosCenter.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="radioButtonJalapenosNone.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="radioButtonJalepenosRight.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="radioButtonJalapenosCenter.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="radioButtonJalepenosLeft.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="radioButtonJalapenosRight.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="radioButtonJalepenosCenter.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="radioButtonJalapenosLeft.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="radioButtonJalepenosRight.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="radioButtonJalapenosNone.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="radioButtonJalepenosLeft.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="radioButtonJalapenosCenter.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+  <metadata name="radioButtonJalapenosRight.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="radioButtonJalapenosLeft.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PizzaTotalLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="toppingImageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>395, 37</value>
+  </metadata>
+  <data name="toppingImageList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACa
+        FwAAAk1TRnQBSQFMAgEBDQEAAUABAAFAAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        AwABQAMAAUADAAEBAQABCAYAARAYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
+        AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
+        AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
+        AWYDAAGZAwABzAIAATMDAAIzAgABMwFmAgABMwGZAgABMwHMAgABMwH/AgABZgMAAWYBMwIAAmYCAAFm
+        AZkCAAFmAcwCAAFmAf8CAAGZAwABmQEzAgABmQFmAgACmQIAAZkBzAIAAZkB/wIAAcwDAAHMATMCAAHM
+        AWYCAAHMAZkCAALMAgABzAH/AgAB/wFmAgAB/wGZAgAB/wHMAQABMwH/AgAB/wEAATMBAAEzAQABZgEA
+        ATMBAAGZAQABMwEAAcwBAAEzAQAB/wEAAf8BMwIAAzMBAAIzAWYBAAIzAZkBAAIzAcwBAAIzAf8BAAEz
+        AWYCAAEzAWYBMwEAATMCZgEAATMBZgGZAQABMwFmAcwBAAEzAWYB/wEAATMBmQIAATMBmQEzAQABMwGZ
+        AWYBAAEzApkBAAEzAZkBzAEAATMBmQH/AQABMwHMAgABMwHMATMBAAEzAcwBZgEAATMBzAGZAQABMwLM
+        AQABMwHMAf8BAAEzAf8BMwEAATMB/wFmAQABMwH/AZkBAAEzAf8BzAEAATMC/wEAAWYDAAFmAQABMwEA
+        AWYBAAFmAQABZgEAAZkBAAFmAQABzAEAAWYBAAH/AQABZgEzAgABZgIzAQABZgEzAWYBAAFmATMBmQEA
+        AWYBMwHMAQABZgEzAf8BAAJmAgACZgEzAQADZgEAAmYBmQEAAmYBzAEAAWYBmQIAAWYBmQEzAQABZgGZ
+        AWYBAAFmApkBAAFmAZkBzAEAAWYBmQH/AQABZgHMAgABZgHMATMBAAFmAcwBmQEAAWYCzAEAAWYBzAH/
+        AQABZgH/AgABZgH/ATMBAAFmAf8BmQEAAWYB/wHMAQABzAEAAf8BAAH/AQABzAEAApkCAAGZATMBmQEA
+        AZkBAAGZAQABmQEAAcwBAAGZAwABmQIzAQABmQEAAWYBAAGZATMBzAEAAZkBAAH/AQABmQFmAgABmQFm
+        ATMBAAGZATMBZgEAAZkBZgGZAQABmQFmAcwBAAGZATMB/wEAApkBMwEAApkBZgEAA5kBAAKZAcwBAAKZ
+        Af8BAAGZAcwCAAGZAcwBMwEAAWYBzAFmAQABmQHMAZkBAAGZAswBAAGZAcwB/wEAAZkB/wIAAZkB/wEz
+        AQABmQHMAWYBAAGZAf8BmQEAAZkB/wHMAQABmQL/AQABzAMAAZkBAAEzAQABzAEAAWYBAAHMAQABmQEA
+        AcwBAAHMAQABmQEzAgABzAIzAQABzAEzAWYBAAHMATMBmQEAAcwBMwHMAQABzAEzAf8BAAHMAWYCAAHM
+        AWYBMwEAAZkCZgEAAcwBZgGZAQABzAFmAcwBAAGZAWYB/wEAAcwBmQIAAcwBmQEzAQABzAGZAWYBAAHM
+        ApkBAAHMAZkBzAEAAcwBmQH/AQACzAIAAswBMwEAAswBZgEAAswBmQEAA8wBAALMAf8BAAHMAf8CAAHM
+        Af8BMwEAAZkB/wFmAQABzAH/AZkBAAHMAf8BzAEAAcwC/wEAAcwBAAEzAQAB/wEAAWYBAAH/AQABmQEA
+        AcwBMwIAAf8CMwEAAf8BMwFmAQAB/wEzAZkBAAH/ATMBzAEAAf8BMwH/AQAB/wFmAgAB/wFmATMBAAHM
+        AmYBAAH/AWYBmQEAAf8BZgHMAQABzAFmAf8BAAH/AZkCAAH/AZkBMwEAAf8BmQFmAQAB/wKZAQAB/wGZ
+        AcwBAAH/AZkB/wEAAf8BzAIAAf8BzAEzAQAB/wHMAWYBAAH/AcwBmQEAAf8CzAEAAf8BzAH/AQAC/wEz
+        AQABzAH/AWYBAAL/AZkBAAL/AcwBAAJmAf8BAAFmAf8BZgEAAWYC/wEAAf8CZgEAAf8BZgH/AQAC/wFm
+        AQABIQEAAaUBAANfAQADdwEAA4YBAAOWAQADywEAA7IBAAPXAQAD3QEAA+MBAAPqAQAD8QEAA/gBAAHw
+        AfsB/wEAAaQCoAEAA4ADAAH/AgAB/wMAAv8BAAH/AwAB/wEAAf8BAAL/AgAD/0cAAv8BAAHzAfY7AAEW
+        AfQBAAGUAfQ4AAH/AfYBAAH0Af8BAAH0Af84AAHzAeMBAAGaARsB/wFNAf8B9gH/ARozAAH/AZQD/wEb
+        AwABGwF1ARoBlDMAAf8BGgH/AhsBGgEAAf8BdQH2Af8CGjQAAf8B9AGaAwAB/wEbAf8B9AH/AfQB/zMA
+        AXUBGwL/AZQB8wIAAf8B4wH2AeMB/zMAAv8BdQLzAf8BAAEbAf8BAAL/NQABlAH/AQAC/wEAARoB9AEA
+        AeMBGzUAARsC/wEaAZoEAAL/NgAB9AFNBAABGwGaOAAD/wEaAf8BmgL/OgAB9AEaAf8BGncAAv8BAAH0
+        AZoBlAGaARoB9AEAAf8YAAH0ARoCmgEaAfYYAAH/AfQBmgFNAZQB/wEbARoD/wgAAf8B7wH/AfQB8AkA
+        AfQBGgEbAv8BGwGaAfQKAAH/AgAC/wgAAfQBdQFNASYBlAL/AfQBGgH/BwAB/wEAAfYBHAH/AfMBBwgA
+        AfQBGgH2BP8B9gEaAfQJAAL0Af8C9AEAAv8EAAH/ARoBTQImAZQD/wEbAfMB/wUAAf8BSwH0AUsB/wIA
+        Af8BBwH/BQAB/wEaAfYG/wH0ARoB/wUAA/8C9AH/AQAB/wH0Af8B8wQAAfQBmgFHAiYBlAT/ARoB/wUA
+        Af8B8wH/AfMB/wIAAfQBHAH/AfAB8wMAAfQBGgf/AfYBvQH0BQAC9AL/AfYB9AH/AvQC/wQAAfQBdQMm
+        AZQE/wG9AfQEAAHxAfMB/wEHAwAC/wIAAbwB8wMAAfQBGwj/Ab0B9AQABP8B8wH0Av8B9AIAAv8DAAHz
+        AU0DJgGUBP8BGwH0BAABBwHzAfQB7wH/AfQBAAHwARwBAAEHAfQC/wIAAvQI/wEbAfQEAAL0Av8B9AH/
+        AvQD/wH0Af8DAAHzAU0DJgGUBP8BGwH0BgABBwH/ARsBcwEAAvQBAAEHAfQB8wHtAgAB9AHzCP8BGwH0
+        BAAD/wH0Af8B8wH/BPQD/wIAAfMBTQMmAZQE/wEbAfQEAAEcAfQBHAP/AgAB9AH/AQAB/wH0AfMCAAL0
+        CP8BGwH0BgAB9AL/AfQE/wL0Af8B9AIAAfQBdQMmAZQE/wG9AfQEAAG8Af8B9AFzAfQB8AIAAXMB8wEA
+        AXMB8gMAAfQBGwj/Ab0B9AQAAf8B9AIAAv8BAAH0AvMCAAH/AfQCAAH0AZoBRwImAZQE/wEaAf8FAAH/
+        AfQB8AHyAe8CAAH0AgAB9AH/AwAB9AEaB/8B9gG9AfQEAAL0Av8C9AL/AfMB9AEAAfQEAAH/ARoBTQIm
+        AZQD/wEbAfMB/wUAAbwB7wHwAf8CAAHwAQcBAAG8AfQEAAH/ARoB9gb/AfQBGgH/BQAB/wL0A/8B9AIA
+        Af8B9AH/BAAB9AF1ARcB+QGUAv8B9AEaAf8GAAH0Af8BbgH0AfEBAAHzAfQBAAHvAfQFAAH0ARoB9gT/
+        AfYBGgH0BwAC/wL0Af8B9AL/AfQGAAH/AfQBmgFNAZQB/wEbARoD/wgAAf8BbgH/AQABBwHzCAAB9AEa
+        ARsC/wEbAZoB9AcAAf8C9AL/AQAB/wP0BQAC/wEAAfQBmgGUAZoBGgH0AQAB/woAAf8CAAEHAfQJAAH0
+        ARoCmgEaAfYLAAL0AQAC/0cAAv8BAAH0AZoCdQEaAfQBAAH/NgAB/wH0AZoB4wImAeMBmgH2Av8HAAL/
+        AgAB8wHyAf8LAAHzAf8BAAH0Af8JAAHzAf8CAAHyAvQB/wYAAfQBdQFNBCYBTQGUAf8HAAHzAfQBBwH2
+        AQAB9AHwAfIB8AH/CAAB/wFMAfMB/wFMAfQIAAH/AbwB8AH0Af8BvALwAbwFAAH/ARoBTQYmAU0B8wH/
+        BQAB9AH/AQcB8gHwAQAC/wH0AfIHAAH0AfMB/wH0Av8B9AL/ARoB/wYAAv8B8AEHAv8C9AUAAfQBmgFH
+        ByYBGgH/BQAB/wP0AfAB9AEAAfMB8AH/AfYB8wUAApkBkwEaAf8DAAH/AW8B9AMAAfQB8AH0AbwB8wH/
+        AfQCAAK8AfABvAMAAfQBdQgmAXUB9AQAAf8B8wHyAfQB8gH0AfIBAAH0AfIB/wH0AfMB9AIAARsBGgL/
+        AhoBTAH/AQABkwHzA/8CAAH0AbwB9AHxAfQB8QH0Af8B8gH0AfMB9AHxAwAB8wFNCCYBTQH0BAAB/wHy
+        AfMB9AHyAv8BAAH0AfIB9AH/AfQB/wIAAfIBGgEAARsBdAH/ARsBAAH/AZkB9AEAAZMBGgIAAfQB8AH/
+        AfQB8wG8AfAB9AHwAfIBBwG8AfAB9AIAAfMBTQgmAU0B9AQAA/QB/wHyAfQB8gH/AfQB8wH0Af8B9AHy
+        BAABGgEbAfYB/wH0BQAC9AIAAfMBBwH/AXMBHAL/AQAB9gH/AfIB8wHwAfMCAAHzAU0IJgFNAfQEAAH/
+        AfIBvAHyAfMB9AHzAf8B8wG8AfMC9AHzBAABGgEbAQAB8gFvAv8B8wH/AZMB/wQAAfQB/wHwAfIB8QG8
+        AQAB/wG8AfQB/wHzAf8CAAH0AXUIJgF1AfQEAAH0AbwB8wHwAfIB8AHzAQAB8gG8AvQFAAEbARoB/wGT
+        Af8B9AEAARsBbwH/AZMB/wMAAf8BvAHwAvMB9AHwAv8B8AHxAfQB8AHxAgAB9AGaAUcHJgEaAf8EAAH/
+        AfQB8wH/AfMBvAHwAf8B9AHwAf8B8gHzBAACGgH0AZMB/wGTAv8B9AEAAv8EAAH0Af8B8QEHAv8B9AG8
+        AfQCAAH0Af8CAAH/ARoBTQYmAU0B8wH/BgAB8wHyAfQB8wH/AQAB/wHyAfMB9AHzBgABGwL/AZMC/wHz
+        AQABmQGTBAAB/wG8AfQBAAHxAQcB/wHwAfQBvAH0BQAB9AF1ARcEJgFNAZQB/wYAAf8B9AHwAQAB9AHw
+        Af8B9AH/AfAHAAH/AUwB8wL/AQABGgF0AQAB/wH0BAAB/wHwAfIB8wHyAfMC/wEAAvAFAAH/AfQBmgHj
+        AiYB4wGaAfYC/wYAAv8B8wHwAfEB8wHwAfQB/wgAAv8BdAEaAQAC/woAAfABvAEAAfMB8AHzBgAC/wEA
+        AfQBmgJ1ARoB9AEAAf8JAAH0AfIB/wH0AfIB/wsAAfQB/w0AAv8BAAH/AfIB/0oAAfYBGwIaARsB9AH/
+        NwAB9AGZBHkBmQF0AZkBGwH/BwAB8QH0AgAC/wkABP8BAAP/CAAB/wIbBf8GAAEbAXkBegF5AXoEmgJ6
+        ARoB/wQAAf8BkwH0Af8B8gH/AfQBmQgAAf8BGwEaAZoCGgGaARoBGwcAAfQBmQEaAZMCdAFvAXQBGgUA
+        ARsBeQFSAXQBdQJTAnoBdAKaAXoBGgH/AgABvAL0Af8CGgH/AQAB/wEAAfQB/wQAAf8BGwGaARoBGwGa
+        AxoBGwH/BQAB/wGZARsBdANMASUBTAF0AfQB/wIAAf8BmQSaAXoBdQF6BJoBegF0AfQBAAH/AfQB/wGZ
+        Af8BGwH0Af8BkwH0AZkBGgH0BAAB9AEaAZoBGgKaARoBmgJ6AZoB9AQAAf8BkwF0ASUBTAJ0BEwBkwH0
+        AQAB8wKaA3oEmgF5AXQCmgF6ARoBAAGZAfQBmQH0ARsB/wEaAQAC9AT/AgAB9AKaARoBmgF6AZoBGgJ6
+        AhoBGwH/AgAB/wH0A0wBkwNMA3QBkwEaAf8BGwGaAVIBegGaAXoBUwKaAXoBeQF6A5oBmQEAAf8BAALz
+        ARsBkwIAAf8BGwH/AZkB9AEaAgAC9AIaBJoBegGaARoCmgH0AQAB/wEaAZMCTAF0AW8BTAFvAUwBdAJM
+        ARoB/wEAARoBdAF6ApoBegGaBHoDdAGZAXQBAAH/AXQB/wGZAf8B9AGTAf8BmQMAAf8BvAIAAfQDmgEb
+        ApoBGwGaARoDmgH0AgAB9AFvAkwBdAFMAZkBkwJMAW8BTAGZAf8BAAEbAXQBmgIaAVMBegKaAVIBUwFS
+        AUwBUgGZAXQCAAH2Af8BvAIbAf8BAAH/AQAB8wHxAQAB8wIAAf8B9AGaAnoEmgIaApoB/wIAAf8BdAJM
+        AXQDTAJ0AZMCTAH/AQAB8wF6ApoBegFSAnoCmgJ6ATEBUgKZAgABGwL0AQAB9gHxAf8B9AGTAv8B9AQA
+        AfMBmgF6AZoCGgEbApoCegGaAf8DAAHzAkwBbwRMAZkBdAFMAXQB/wEAAf8BmgGZAlIBKwFSApoBUgF6
+        AlIBdAFSARoCAAH2Af8BAAHzAf8BGwHzAfED/wGZBAAB/wH0ARsCmgEaAZoCGgHzAv8EAAH/AXQBkwH/
+        AXQBbwVMARoB/wIAARoBeQFSAVkDUgF5AXQBUgErAVIBmQF0AfQDAAEaAfMBGgEbAfQBAAEbAvQBkwcA
+        AxsBGgGaAXoDGgH0BAAB/wGZApMBmQF0AW8BdANMARsDAAH/AZoBdAF5ApoBeQGZAXQBmgF5AZkBdAGZ
+        BAAB/wH2AbwC9AEAAf8B8wL/BgABGwIaApoCegGaAfQC/wUAAf8BmQJMAW8BTAGTAW8BGgGTAf8EAAH0
+        AZoBdAKaARoBdAFSAXQBeQEaAZkB/wYAAfQBAAHyAgAB9AEbBwAB/wEAAhsBGgGaAfMC/wgAAf8BGwKZ
+        AXQCmQL/BgAB9AGZAXoBdAJ5AVIBdAGZAfEB/wkAARoB/w0AAf8B9AL/DgAB/wHzAf8JAAH/AfQEGgHz
+        Af80AAFCAU0BPgcAAT4DAAEoAwABQAMAAUADAAEBAQABAQYAAQIWAAP/AQAC/wYAAfwBnwYAAfwBnwYA
+        AeQBnwYAAeQBAwYAAYEBwwYAAYEBAwYAAccBAQYAAcABwQYAAcABkwYAAeQBkwYAAeAB8wYAAfMBzwYA
+        AfABDwYAAfwBPwYAAv8GAAGQAS8C/wHwAT8C/wHAAQcB+AE/AeABHwH7AT8BwAEPAegBPwHAAQ8B+AEn
+        AYABBwHBAY8BgAEHAcABhwGAAQcBwQGDAYABBwHAAQcBgAEHAYcBMwGAAQcBgAEzAYABBwGBASEBgAEH
+        AYABAwGAAQcB4QEhAYABBwGAAQEBgAEHAYEBkQGAAQcB4AEBAYABBwGBAZMBgAEHAZkBGQGAAQcBwQGz
+        AYABBwGAARcBgAEHAcMBJwGAAQcBwAFjAcABDwHBAScBwAEPAeABDwHAAQcB+AGfAeABHwHBAQ8BkAEv
+        Af0BnwHwAT8B+QE/CP8BkAEvBv8BwAEHAfMBHwH8AZ8B8wEPAcABDwHhAQcB+AEfAeABDwGAAQcBwQEP
+        AeABAwHwAQ8BgAEHAcABgwHgAeMBgAHDAYABBwGAAYEBgAFBAYABAwGAAQcBgAGBAZABiQGAAQEBgAEH
+        AYABAQHgAfkBgAGBAYABBwGAAQEB5AEDAcABgQGAAQcBgAGHAcABgwGAAQEBgAEHAYABAwHAARMBwAEZ
+        AYABBwHgAYMB8AETAcQBBwHAAQ8BxAEPAeABkwHAAScBwAEHAeABDwHwAZ8B+QEfAZABLwH4AR8B/AH/
+        AfkBHwj/AfgBDwb/AeABAwH5AZ8B8AGPAfABDwHAAQEB4AEfAeABDwHgAQ8BgAEAAcABUwHAAQcBwAED
+        AgABgAEDAcABAwHAAQECAAGAAYEBgAEBAYADAAGhAYEBgAEBAQABAQIAAYABOQGAAQEBgAEBAgABwAGl
+        AYABAQGAAQECAAHEAQMBwAEBAcABAQIAAcgBAwHAAQMBwAEBAYABAAHgAYcB8AEDAcABAwGAAQEB4AGH
+        AeABAwHgAQMBwAEBAfoBzwHoAQ8B8AEHAeABAwH+AX8B/AE/Af8BHwHwAQ8G/ws=
+</value>
+  </data>
+  <metadata name="pbPizza.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="addToCartButton.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="itemsInCartLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ordersListBox.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="GrandTotalLabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="filledButtonLeft.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="filledButtonRight.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="groupBoxItemsInCartText.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="groupBoxGrandTotal.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="groupBox1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
 </root>

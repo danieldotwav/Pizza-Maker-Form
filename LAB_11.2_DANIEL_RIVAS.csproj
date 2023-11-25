@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -80,19 +81,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\chicken.png" />
-    <Content Include="Resources\crust.png" />
-    <Content Include="Resources\doublecheese.png" />
-    <Content Include="Resources\doublesauce.png" />
-    <Content Include="Resources\full.png" />
-    <Content Include="Resources\greenpepper.png" />
-    <Content Include="Resources\ham.png" />
-    <Content Include="Resources\jalapeno.png" />
-    <Content Include="Resources\left.png" />
-    <Content Include="Resources\mushroom.png" />
-    <Content Include="Resources\none.png" />
-    <Content Include="Resources\onion.png" />
-    <Content Include="Resources\pepperoni.png" />
+    <Resource Include="Resources\chicken.png" />
+    <Resource Include="Resources\crust.png" />
+    <Resource Include="Resources\doublecheese.png" />
+    <Resource Include="Resources\doublesauce.png" />
+    <Resource Include="Resources\full.png" />
+    <Resource Include="Resources\greenpepper.png" />
+    <Resource Include="Resources\ham.png" />
+    <Resource Include="Resources\jalapeno.png" />
+    <Resource Include="Resources\left.png" />
+    <Resource Include="Resources\mushroom.png" />
+    <Resource Include="Resources\none.png" />
+    <Resource Include="Resources\onion.png" />
+    <Resource Include="Resources\pepperoni.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\FullRedCircle.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

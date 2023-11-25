@@ -1,11 +1,9 @@
-﻿using System;
+﻿// LAB_11.2_DANIEL_RIVAS
+
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LAB_11._2_DANIEL_RIVAS
@@ -13,19 +11,279 @@ namespace LAB_11._2_DANIEL_RIVAS
     public partial class Form1 : Form
     {
         private decimal basePrice = 0;
+        private decimal grandTotal = 0;
         private decimal halfToppingPrice = 1.00m;
         private decimal fullToppingPrice = 2.00m;
+        private decimal stuffedCrustPriceModifier = 0.20m;
+
+        private decimal TenInchPrice = 10m;
+        private decimal TwelveInchPrice = 12m;
+        private decimal FourteenInchPrice = 14m;
+
+        private enum ToppingType
+        {
+            Half,
+            Full
+        }
 
         public Form1()
         {
             InitializeComponent();
             InitializePizzaSizeComboBox();
             InitializeCrustTypeComboBox();
-
             WireUpToppingRadioButtons();
 
+            // Set the PictureBox to display the combined baseline pizza image with crust, sauce, and cheese
+            pbPizza.Image = CreateBaselineImage();
+
+            // Set the images to indicate topping placement
+            filledButtonLeft.Image = CreateFilledButton(filledButtonLeft, Properties.Resources.FullRedCircle, "Left");
+            filledButtonCenter.Image = CreateFilledButton(filledButtonCenter, Properties.Resources.FullRedCircle, "Center");
+            filledButtonRight.Image = CreateFilledButton(filledButtonRight, Properties.Resources.FullRedCircle, "Right");
+
+            // Subscribe to selected index changed events to update the price total when pizza size or crust is selected
             PizzaSize.SelectedIndexChanged += new EventHandler(UpdateBasePriceAndTotal);
             CrustType.SelectedIndexChanged += new EventHandler(UpdateCrustAndTotal);
+
+            // Disable the radio button used for display purposes only, not for user interaction
+            radioButtonEmptyToppingDisplay.Enabled = false;
+
+            // Configure the ordersListBox to use custom drawing 
+            ordersListBox.DrawMode = DrawMode.OwnerDrawFixed;
+            ordersListBox.DrawItem += new DrawItemEventHandler(ordersListBox_DrawItem);
+
+            // Update the list box's horizontal extent to ensure all content is visible
+            UpdateHorizontalExtent();
+        }
+
+        // Custom-draws each item in a ListBox, rendering text and adding a separator line beneath each item.
+        private void ordersListBox_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            e.DrawBackground();
+            e.DrawFocusRectangle();
+
+            if (e.Index >= 0)
+            {
+                // Calculate the vertical position to center the text within the bounds
+                SizeF textSize = e.Graphics.MeasureString(ordersListBox.Items[e.Index].ToString(), e.Font);
+                float textY = e.Bounds.Y + (e.Bounds.Height - textSize.Height) / 2;
+
+                e.Graphics.DrawString(ordersListBox.Items[e.Index].ToString(),
+                                      e.Font,
+                                      new SolidBrush(e.ForeColor),
+                                      e.Bounds.X,
+                                      textY); // Use the calculated Y-coordinate
+
+                // Draw a line at the bottom of the item
+                e.Graphics.DrawLine(Pens.Black,
+                                    e.Bounds.X,
+                                    e.Bounds.Bottom - 1, // Draw line at the bottom of the item
+                                    e.Bounds.Right,
+                                    e.Bounds.Bottom - 1);
+            }
+        }
+
+        // Method to update the horizontal extent
+        private void UpdateHorizontalExtent()
+        {
+            int maxWidth = 0;
+            foreach (var item in ordersListBox.Items)
+            {
+                int itemWidth = TextRenderer.MeasureText(item.ToString(), ordersListBox.Font).Width;
+                if (itemWidth > maxWidth)
+                {
+                    maxWidth = itemWidth;
+                }
+            }
+            ordersListBox.HorizontalExtent = maxWidth;
+        }
+
+        private Image CreateFilledButton(PictureBox pictureBox, Image imageToDraw, string side)
+        {
+            Bitmap buttonImage = new Bitmap(pictureBox.Width, pictureBox.Height);
+            Rectangle destinationRect;
+
+            using (Graphics g = Graphics.FromImage(buttonImage))
+            {
+                // The source rectangle from the original image
+                Rectangle sourceRect = new Rectangle(0, 0, imageToDraw.Width / 2, imageToDraw.Height);
+
+                if (side == "Left")
+                {
+                    destinationRect = new Rectangle(0, 0, pictureBox.Width / 2, pictureBox.Height);
+                }
+                else if (side == "Right")
+                {
+                    sourceRect.X = imageToDraw.Width / 2;
+                    destinationRect = new Rectangle(pictureBox.Width / 2, 0, pictureBox.Width / 2, pictureBox.Height);
+                }
+                else // "Center" or default
+                {
+                    sourceRect = new Rectangle(0, 0, imageToDraw.Width, imageToDraw.Height);
+                    destinationRect = new Rectangle(0, 0, pictureBox.Width, pictureBox.Height);
+                }
+
+                // Draw the image onto the button using the source and destination rectangles
+                g.DrawImage(imageToDraw, destinationRect, sourceRect, GraphicsUnit.Pixel);
+
+                // Set the drawing quality
+                g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            }
+
+            return buttonImage;
+        }
+
+        private Image CreateBaselineImage()
+        {
+            var crust = Properties.Resources.crust;
+            var sauce = Properties.Resources.doublesauce;
+            var cheese = Properties.Resources.doublecheese;
+
+            Bitmap baselineImage = new Bitmap(pbPizza.Width, pbPizza.Height);
+
+            using (Graphics g = Graphics.FromImage(baselineImage))
+            {
+                // Draw the crust, scaling it to fit the new bitmap
+                g.DrawImage(crust, new Rectangle(0, 0, pbPizza.Width, pbPizza.Height));
+
+                // Layer the sauce on top, scaling it as well
+                g.DrawImage(sauce, new Rectangle(0, 0, pbPizza.Width, pbPizza.Height));
+
+                // Layer the cheese on top, scaling it as well
+                g.DrawImage(cheese, new Rectangle(0, 0, pbPizza.Width, pbPizza.Height));
+
+                // Set the drawing quality
+                g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            }
+
+            return baselineImage;
+        }
+        
+        private void UpdatePizzaWithToppings()
+        {
+            // Start with the baseline image
+            Bitmap pizzaWithToppings = new Bitmap(CreateBaselineImage());
+
+            using (Graphics g = Graphics.FromImage(pizzaWithToppings))
+            {
+                g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+                int halfWidth = pizzaWithToppings.Width / 2;
+                int height = pizzaWithToppings.Height;
+
+                //////////////////////////////
+                ///// Draw Toppings
+                //////////////////////////
+
+                if (!radioButtonPepperoniNone.Checked)
+                {
+                    if (radioButtonPepperoniLeft.Checked)
+                    {
+                        DrawToppingHalf(g, radioButtonPepperoniLeft, Properties.Resources.pepperoni, "Left", halfWidth, height);
+                    }
+                    else if (radioButtonPepperoniRight.Checked)
+                    {
+                        DrawToppingHalf(g, radioButtonPepperoniRight, Properties.Resources.pepperoni, "Right", halfWidth, height);
+                    }
+                    else if (radioButtonPepperoniCenter.Checked)
+                    {
+                        DrawToppingFull(g, radioButtonPepperoniCenter, Properties.Resources.pepperoni, pizzaWithToppings.Width, height);
+                    }
+                }
+                
+                if (!radioButtonHamNone.Checked)
+                {
+                    if (radioButtonHamLeft.Checked)
+                    {
+                        DrawToppingHalf(g, radioButtonHamLeft, Properties.Resources.ham, "Left", halfWidth, height);
+                    }
+                    else if (radioButtonHamRight.Checked)
+                    {
+                        DrawToppingHalf(g, radioButtonHamRight, Properties.Resources.ham, "Right", halfWidth, height);
+                    }
+                    else if (radioButtonHamCenter.Checked)
+                    {
+                        DrawToppingFull(g, radioButtonHamCenter, Properties.Resources.ham, pizzaWithToppings.Width, height);
+                    }
+                }
+                
+                if (!radioButtonOnionsNone.Checked)
+                {
+                    if (radioButtonOnionsLeft.Checked)
+                    {
+                        DrawToppingHalf(g, radioButtonOnionsLeft, Properties.Resources.onion, "Left", halfWidth, height);
+                    }
+                    else if (radioButtonOnionsRight.Checked)
+                    {
+                        DrawToppingHalf(g, radioButtonOnionsRight, Properties.Resources.onion, "Right", halfWidth, height);
+                    }
+                    else if (radioButtonOnionsCenter.Checked)
+                    {
+                        DrawToppingFull(g, radioButtonOnionsCenter, Properties.Resources.onion, pizzaWithToppings.Width, height);
+                    }
+                }
+                
+                if (!radioButtonMushroomsNone.Checked)
+                {
+                    if (radioButtonMushroomsLeft.Checked)
+                    {
+                        DrawToppingHalf(g, radioButtonMushroomsLeft, Properties.Resources.mushroom, "Left", halfWidth, height);
+                    }
+                    else if (radioButtonMushroomsRight.Checked)
+                    {
+                        DrawToppingHalf(g, radioButtonMushroomsRight, Properties.Resources.mushroom, "Right", halfWidth, height);
+                    }
+                    else if (radioButtonMushroomsCenter.Checked)
+                    {
+                        DrawToppingFull(g, radioButtonMushroomsCenter, Properties.Resources.mushroom, pizzaWithToppings.Width, height);
+                    }
+                }
+                
+                if (!radioButtonJalapenosNone.Checked)
+                {
+                    if (radioButtonJalapenosLeft.Checked)
+                    {
+                        DrawToppingHalf(g, radioButtonJalapenosLeft, Properties.Resources.jalapeno, "Left", halfWidth, height);
+                    }
+                    else if (radioButtonJalapenosRight.Checked)
+                    {
+                        DrawToppingHalf(g, radioButtonJalapenosRight, Properties.Resources.jalapeno, "Right", halfWidth, height);
+                    }
+                    else if (radioButtonJalapenosCenter.Checked)
+                    {
+                        DrawToppingFull(g, radioButtonJalapenosCenter, Properties.Resources.jalapeno, pizzaWithToppings.Width, height);
+                    }
+                }
+            }
+
+            pbPizza.Image?.Dispose(); // Dispose of the previous image if it exists
+            pbPizza.Image = pizzaWithToppings; // Update Pizza image
+        }
+
+        private void DrawToppingHalf(Graphics g, RadioButton radioButton, Image toppingImage, string side, int halfWidth, int height)
+        {
+            if (radioButton.Checked)
+            {
+                Rectangle sourceRect = new Rectangle(0, 0, toppingImage.Width / 2, toppingImage.Height);
+                Rectangle destinationRect = new Rectangle(0, 0, halfWidth, height);
+
+                if (side == "Right")
+                {
+                    sourceRect.X = toppingImage.Width / 2;
+                    destinationRect.X = halfWidth;
+                }
+
+                g.DrawImage(toppingImage, destinationRect, sourceRect, GraphicsUnit.Pixel);
+            }
+        }
+
+        private void DrawToppingFull(Graphics g, RadioButton radioButton, Image toppingImage, int width, int height)
+        {
+            if (!radioButton.Checked) return;
+            g.DrawImage(toppingImage, new Rectangle(0, 0, width, height));
         }
 
         private void InitializePizzaSizeComboBox()
@@ -33,7 +291,6 @@ namespace LAB_11._2_DANIEL_RIVAS
             PizzaSize.Items.Add("10\"");
             PizzaSize.Items.Add("12\"");
             PizzaSize.Items.Add("14\"");
-
         }
 
         private void InitializeCrustTypeComboBox()
@@ -41,40 +298,30 @@ namespace LAB_11._2_DANIEL_RIVAS
             CrustType.Items.Add("Regular");
             CrustType.Items.Add("Thin");
             CrustType.Items.Add("Stuffed");
-
-        }
-
-        private void UpdatePrice(object sender, EventArgs e)
-        {
-            CalculateTotalPrice();
         }
 
         private void UpdateCrustAndTotal(object sender, EventArgs e)
         {
-            CalculateTotalPrice(); // The crust selection will affect the total price
+            CalculateTotalPrice();
         }
 
         private void ToppingRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            // Cast the sender to a RadioButton
-            RadioButton rb = sender as RadioButton;
-
-            // When a RadioButton is checked, uncheck others in the same group
-            if (rb != null && rb.Checked)
+            if (sender is RadioButton rb && rb.Checked)
             {
-                UncheckOtherToppingPositions(rb);
                 CalculateTotalPrice();
+                UpdatePizzaWithToppings();
             }
         }
 
         private void WireUpToppingRadioButtons()
         {
             var allToppingRadioButtons = new RadioButton[] {
-                radioButtonPepperoniLeft, radioButtonPepperoniCenter, radioButtonPepperoniRight,
-                radioButtonHamLeft, radioButtonHamCenter, radioButtonHamRight,
-                radioButtonSausageLeft, radioButtonSausageCenter, radioButtonSausageRight,
-                radioButtonMushroomsLeft, radioButtonMushroomsCenter, radioButtonMushroomsRight,
-                radioButtonJalepenosLeft, radioButtonJalepenosCenter, radioButtonJalepenosRight
+                radioButtonPepperoniLeft, radioButtonPepperoniCenter, radioButtonPepperoniRight, radioButtonPepperoniNone,
+                radioButtonHamLeft, radioButtonHamCenter, radioButtonHamRight, radioButtonHamNone,
+                radioButtonOnionsLeft, radioButtonOnionsCenter, radioButtonOnionsRight, radioButtonOnionsNone,
+                radioButtonMushroomsLeft, radioButtonMushroomsCenter, radioButtonMushroomsRight, radioButtonMushroomsNone,
+                radioButtonJalapenosLeft, radioButtonJalapenosCenter, radioButtonJalapenosRight, radioButtonJalapenosNone
             };
 
             foreach (RadioButton rb in allToppingRadioButtons)
@@ -83,46 +330,18 @@ namespace LAB_11._2_DANIEL_RIVAS
             }
         }
 
-        private void UncheckOtherToppingPositions(RadioButton checkedRadioButton)
-        {
-            var toppingGroups = new Dictionary<string, RadioButton[]>() {
-                { "Pepperoni", new[] { radioButtonPepperoniLeft, radioButtonPepperoniCenter, radioButtonPepperoniRight } },
-                { "Ham", new[] { radioButtonHamLeft, radioButtonHamCenter, radioButtonHamRight } },
-                { "Sausage", new[] { radioButtonSausageLeft, radioButtonSausageCenter, radioButtonSausageRight } },
-                { "Mushrooms", new[] { radioButtonMushroomsLeft, radioButtonMushroomsCenter, radioButtonMushroomsRight } },
-                { "Jalepenos", new[] { radioButtonJalepenosLeft, radioButtonJalepenosCenter, radioButtonJalepenosRight } }
-            };
-
-            string selectedTopping = toppingGroups.FirstOrDefault(g => g.Value.Contains(checkedRadioButton)).Key;
-
-            if (selectedTopping != null)
-            {
-                foreach (var rb in toppingGroups[selectedTopping])
-                {
-                    if (rb != checkedRadioButton && rb.Checked)
-                    {
-                        rb.Checked = false;
-                    }
-                }
-            }
-        }
-
         private decimal GetCrustPriceAdjustment()
         {
-
             decimal updatedPrice = 0m;
-            // Check if SelectedItem is not null before calling ToString
             if (CrustType.SelectedItem.ToString() == "Stuffed")
             {
-                updatedPrice = basePrice * 0.20m; // 20% upcharge for deep dish
+                updatedPrice = basePrice * stuffedCrustPriceModifier;
             }
-
-            return updatedPrice; // No additional charge for Regular or Thin Crust
+            return updatedPrice;
         }
 
         private void CalculateTotalPrice()
         {
-            // Only calculate the total price if valid selections have been made
             if (PizzaSize.SelectedIndex != -1 && CrustType.SelectedIndex != -1)
             {
                 decimal crustPriceAdjustment = GetCrustPriceAdjustment();
@@ -132,7 +351,7 @@ namespace LAB_11._2_DANIEL_RIVAS
                 decimal toppingsPrice = (halfToppingCount * halfToppingPrice) + (fullToppingCount * fullToppingPrice);
                 decimal totalPrice = basePrice + crustPriceAdjustment + toppingsPrice;
 
-                TotalPriceLabel.Text = $"Total: ${totalPrice.ToString("0.00")}";
+                PizzaTotalLabel.Text = $"Pizza Total: ${totalPrice.ToString("0.00")}";
             }
         }
 
@@ -143,16 +362,16 @@ namespace LAB_11._2_DANIEL_RIVAS
             // Check left buttons
             count += radioButtonPepperoniLeft.Checked ? 1 : 0;
             count += radioButtonHamLeft.Checked ? 1 : 0;
-            count += radioButtonSausageLeft.Checked ? 1 : 0;
+            count += radioButtonOnionsLeft.Checked ? 1 : 0;
             count += radioButtonMushroomsLeft.Checked ? 1 : 0;
-            count += radioButtonJalepenosLeft.Checked ? 1 : 0;
+            count += radioButtonJalapenosLeft.Checked ? 1 : 0;
 
             // Check right buttons
             count += radioButtonPepperoniRight.Checked ? 1 : 0;
             count += radioButtonHamRight.Checked ? 1 : 0;
-            count += radioButtonSausageRight.Checked ? 1 : 0;
+            count += radioButtonOnionsRight.Checked ? 1 : 0;
             count += radioButtonMushroomsRight.Checked ? 1 : 0;
-            count += radioButtonJalepenosRight.Checked ? 1 : 0;
+            count += radioButtonJalapenosRight.Checked ? 1 : 0;
 
             return count;
         }
@@ -161,43 +380,190 @@ namespace LAB_11._2_DANIEL_RIVAS
         {
             int count = 0;
 
-            // Check center buttons
             count += radioButtonPepperoniCenter.Checked ? 1 : 0;
             count += radioButtonHamCenter.Checked ? 1 : 0;
-            count += radioButtonSausageCenter.Checked ? 1 : 0;
+            count += radioButtonOnionsCenter.Checked ? 1 : 0;
             count += radioButtonMushroomsCenter.Checked ? 1 : 0;
-            count += radioButtonJalepenosCenter.Checked ? 1 : 0;
+            count += radioButtonJalapenosCenter.Checked ? 1 : 0;
 
             return count;
         }
 
         private void UpdateBasePriceAndTotal(object sender, EventArgs e)
         {
-
-            // Assuming the PizzaSize ComboBox has "10\"", "12\"", "14\"" as items
             switch (PizzaSize.SelectedItem.ToString())
             {
                 case "10\"":
-                    basePrice = 10m;
+                    basePrice = TenInchPrice;
                     break;
                 case "12\"":
-                    basePrice = 12m;
+                    basePrice = TwelveInchPrice;
                     break;
                 case "14\"":
-                    basePrice = 14m;
+                    basePrice = FourteenInchPrice;
                     break;
                 default:
-                    basePrice = 0m; // Handle unexpected case
+                    basePrice = 0m;
                     break;
             }
-
             CalculateTotalPrice();
         }
 
-        private void CrustType_SelectedIndexChanged(object sender, EventArgs e)
+        private void addToCartButton_Click(object sender, EventArgs e)
         {
+            bool isValidSize = true;
+            bool isValidCrust = true;
 
+            if (PizzaSize.SelectedIndex < 0)
+            {
+                MessageBox.Show("Please select a pizza size.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                isValidSize = false;
+            }
+
+            if (CrustType.SelectedIndex < 0)
+            {
+                MessageBox.Show("Please select a crust type.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                isValidCrust = false;
+            }
+
+            if (isValidSize && isValidCrust)
+            {
+                CalculateTotalPrice(); // Ensure the total price is up to date
+                string selectedSize = PizzaSize.SelectedItem.ToString();
+                string selectedCrust = CrustType.SelectedItem.ToString();
+                string orderDetails = $"Size: {selectedSize} || Crust: {selectedCrust} || ";
+
+                // Include selected toppings in the order details
+                orderDetails += "Toppings: " + GetSelectedToppings() + " || ";
+                orderDetails += PizzaTotalLabel.Text;
+
+                // Add this order detail to the ListBox
+                ordersListBox.Items.Add(orderDetails);
+                UpdateGrandTotal();
+                UpdateHorizontalExtent();
+            }
         }
 
+        private string GetSelectedToppings()
+        {
+            List<string> toppings = new List<string>();
+
+            if (radioButtonPepperoniCenter.Checked)
+            {
+                toppings.Add("Pepperoni");
+            }
+            else if (radioButtonPepperoniLeft.Checked)
+            {
+                toppings.Add("Pepperoni (Left Half)");
+            }
+            else if (radioButtonPepperoniRight.Checked)
+            {
+                toppings.Add("Pepperoni (Right Half)");
+            }
+
+            if (radioButtonHamCenter.Checked)
+            {
+                toppings.Add("Ham");
+            }
+            else if (radioButtonHamLeft.Checked)
+            {
+                toppings.Add("Ham (Left Half)");
+            }
+            else if (radioButtonHamRight.Checked)
+            {
+                toppings.Add("Ham (Right Half)");
+            }
+
+            if (radioButtonOnionsCenter.Checked)
+            {
+                toppings.Add("Onions");
+            }
+            else if (radioButtonOnionsLeft.Checked)
+            {
+                toppings.Add("Onions (Left Half)");
+            }
+            else if (radioButtonOnionsRight.Checked)
+            {
+                toppings.Add("Onions (Right Half)");
+            }
+
+            if (radioButtonMushroomsCenter.Checked)
+            {
+                toppings.Add("Mushrooms");
+            }
+            else if (radioButtonMushroomsLeft.Checked)
+            {
+                toppings.Add("Mushrooms (Left Half)");
+            }
+            else if (radioButtonMushroomsRight.Checked)
+            {
+                toppings.Add("Mushrooms (Right Half)");
+            }
+
+            if (radioButtonJalapenosCenter.Checked)
+            {
+                toppings.Add("Jalapenos");
+            }
+            else if (radioButtonJalapenosLeft.Checked)
+            {
+                toppings.Add("Jalapenos (Left Half)");
+            }
+            else if (radioButtonJalapenosRight.Checked)
+            {
+                toppings.Add("Jalapenos (Right Half)");
+            }
+
+            if (toppings.Count == 0)
+            {
+                return "None";
+            }
+
+            return string.Join(", ", toppings);
+        }
+
+        private void UpdateGrandTotal()
+        {
+            grandTotal = 0m; // Reset grandTotal before recalculating
+
+            foreach (var item in ordersListBox.Items)
+            {
+                string itemString = item.ToString();
+                string costString = itemString.Substring(itemString.LastIndexOf("$") + 1);
+                if (decimal.TryParse(costString, out decimal itemCost))
+                {
+                    grandTotal += itemCost;
+                }
+            }
+            GrandTotalLabel.Text = $"Grand Total: ${grandTotal:0.00}";
+        }
+
+        private void ordersListBox_Click(object sender, EventArgs e)
+        {
+            if (ordersListBox.SelectedIndex >= 0)
+            {
+                var result = MessageBox.Show("Would you like to remove this item from the cart?",
+                                             "Remove Item",
+                                             MessageBoxButtons.YesNo,
+                                             MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    ordersListBox.Items.RemoveAt(ordersListBox.SelectedIndex);
+                    UpdateGrandTotal();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select an item to remove.",
+                                "Select Item",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+            }
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

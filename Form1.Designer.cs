@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Header = new System.Windows.Forms.GroupBox();
             this.HeaderLabel = new System.Windows.Forms.Label();
             this.PizzaSize = new System.Windows.Forms.ComboBox();
@@ -37,48 +38,74 @@
             this.CrustLabel = new System.Windows.Forms.Label();
             this.SizeLabel = new System.Windows.Forms.Label();
             this.groupBoxToppingsContainer = new System.Windows.Forms.GroupBox();
-            this.TotalPriceLabel = new System.Windows.Forms.Label();
-            this.JalepenosLabel = new System.Windows.Forms.Label();
+            this.filledButtonCenter = new System.Windows.Forms.PictureBox();
+            this.radioButtonEmptyToppingDisplay = new System.Windows.Forms.RadioButton();
+            this.JalapenosLabel = new System.Windows.Forms.Label();
             this.MushroomsLabel = new System.Windows.Forms.Label();
-            this.SausageLabel = new System.Windows.Forms.Label();
+            this.OnionsLabel = new System.Windows.Forms.Label();
             this.HamLabel = new System.Windows.Forms.Label();
             this.PepperoniLabel = new System.Windows.Forms.Label();
             this.ToppingsLabel = new System.Windows.Forms.Label();
             this.groupBoxTopping1 = new System.Windows.Forms.GroupBox();
+            this.radioButtonPepperoniNone = new System.Windows.Forms.RadioButton();
             this.radioButtonPepperoniRight = new System.Windows.Forms.RadioButton();
             this.radioButtonPepperoniCenter = new System.Windows.Forms.RadioButton();
             this.radioButtonPepperoniLeft = new System.Windows.Forms.RadioButton();
             this.groupBoxTopping2 = new System.Windows.Forms.GroupBox();
+            this.radioButtonHamNone = new System.Windows.Forms.RadioButton();
             this.radioButtonHamCenter = new System.Windows.Forms.RadioButton();
             this.radioButtonHamRight = new System.Windows.Forms.RadioButton();
             this.radioButtonHamLeft = new System.Windows.Forms.RadioButton();
             this.groupBoxTopping3 = new System.Windows.Forms.GroupBox();
-            this.radioButtonSausageCenter = new System.Windows.Forms.RadioButton();
-            this.radioButtonSausageRight = new System.Windows.Forms.RadioButton();
-            this.radioButtonSausageLeft = new System.Windows.Forms.RadioButton();
+            this.radioButtonOnionsNone = new System.Windows.Forms.RadioButton();
+            this.radioButtonOnionsCenter = new System.Windows.Forms.RadioButton();
+            this.radioButtonOnionsRight = new System.Windows.Forms.RadioButton();
+            this.radioButtonOnionsLeft = new System.Windows.Forms.RadioButton();
             this.groupBoxTopping4 = new System.Windows.Forms.GroupBox();
+            this.radioButtonMushroomsNone = new System.Windows.Forms.RadioButton();
             this.radioButtonMushroomsCenter = new System.Windows.Forms.RadioButton();
             this.radioButtonMushroomsRight = new System.Windows.Forms.RadioButton();
             this.radioButtonMushroomsLeft = new System.Windows.Forms.RadioButton();
             this.groupBoxTopping5 = new System.Windows.Forms.GroupBox();
-            this.radioButtonJalepenosCenter = new System.Windows.Forms.RadioButton();
-            this.radioButtonJalepenosRight = new System.Windows.Forms.RadioButton();
-            this.radioButtonJalepenosLeft = new System.Windows.Forms.RadioButton();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.radioButtonJalapenosNone = new System.Windows.Forms.RadioButton();
+            this.radioButtonJalapenosCenter = new System.Windows.Forms.RadioButton();
+            this.radioButtonJalapenosRight = new System.Windows.Forms.RadioButton();
+            this.radioButtonJalapenosLeft = new System.Windows.Forms.RadioButton();
+            this.PizzaTotalLabel = new System.Windows.Forms.Label();
+            this.toppingImageList = new System.Windows.Forms.ImageList(this.components);
+            this.pbPizza = new System.Windows.Forms.PictureBox();
+            this.addToCartButton = new System.Windows.Forms.Button();
+            this.itemsInCartLabel = new System.Windows.Forms.Label();
+            this.ordersListBox = new System.Windows.Forms.ListBox();
+            this.GrandTotalLabel = new System.Windows.Forms.Label();
+            this.filledButtonLeft = new System.Windows.Forms.PictureBox();
+            this.filledButtonRight = new System.Windows.Forms.PictureBox();
+            this.ExitButton = new System.Windows.Forms.Button();
+            this.groupBoxItemsInCartText = new System.Windows.Forms.GroupBox();
+            this.groupBoxGrandTotal = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Header.SuspendLayout();
             this.groupBoxSizeAndCrustContainer.SuspendLayout();
             this.groupBoxToppingsContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.filledButtonCenter)).BeginInit();
             this.groupBoxTopping1.SuspendLayout();
             this.groupBoxTopping2.SuspendLayout();
             this.groupBoxTopping3.SuspendLayout();
             this.groupBoxTopping4.SuspendLayout();
             this.groupBoxTopping5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPizza)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filledButtonLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filledButtonRight)).BeginInit();
+            this.groupBoxItemsInCartText.SuspendLayout();
+            this.groupBoxGrandTotal.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Header
             // 
             this.Header.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Header.BackColor = System.Drawing.Color.Black;
+            this.Header.Controls.Add(this.ExitButton);
             this.Header.Controls.Add(this.HeaderLabel);
             this.Header.Location = new System.Drawing.Point(-7, -6);
             this.Header.Name = "Header";
@@ -102,6 +129,7 @@
             // PizzaSize
             // 
             this.PizzaSize.AllowDrop = true;
+            this.PizzaSize.BackColor = System.Drawing.Color.Snow;
             this.PizzaSize.Font = new System.Drawing.Font("Sitka Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PizzaSize.FormattingEnabled = true;
             this.PizzaSize.Location = new System.Drawing.Point(138, 30);
@@ -112,13 +140,13 @@
             // CrustType
             // 
             this.CrustType.AllowDrop = true;
+            this.CrustType.BackColor = System.Drawing.Color.Snow;
             this.CrustType.Font = new System.Drawing.Font("Sitka Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CrustType.FormattingEnabled = true;
             this.CrustType.Location = new System.Drawing.Point(138, 66);
             this.CrustType.Name = "CrustType";
             this.CrustType.Size = new System.Drawing.Size(70, 24);
             this.CrustType.TabIndex = 2;
-            this.CrustType.SelectedIndexChanged += new System.EventHandler(this.CrustType_SelectedIndexChanged);
             // 
             // groupBoxSizeAndCrustContainer
             // 
@@ -126,7 +154,7 @@
             this.groupBoxSizeAndCrustContainer.Controls.Add(this.SizeLabel);
             this.groupBoxSizeAndCrustContainer.Controls.Add(this.CrustType);
             this.groupBoxSizeAndCrustContainer.Controls.Add(this.PizzaSize);
-            this.groupBoxSizeAndCrustContainer.Location = new System.Drawing.Point(30, 99);
+            this.groupBoxSizeAndCrustContainer.Location = new System.Drawing.Point(30, 91);
             this.groupBoxSizeAndCrustContainer.Name = "groupBoxSizeAndCrustContainer";
             this.groupBoxSizeAndCrustContainer.Size = new System.Drawing.Size(259, 113);
             this.groupBoxSizeAndCrustContainer.TabIndex = 3;
@@ -156,9 +184,13 @@
             // 
             // groupBoxToppingsContainer
             // 
-            this.groupBoxToppingsContainer.Controls.Add(this.JalepenosLabel);
+            this.groupBoxToppingsContainer.Controls.Add(this.filledButtonRight);
+            this.groupBoxToppingsContainer.Controls.Add(this.filledButtonLeft);
+            this.groupBoxToppingsContainer.Controls.Add(this.filledButtonCenter);
+            this.groupBoxToppingsContainer.Controls.Add(this.radioButtonEmptyToppingDisplay);
+            this.groupBoxToppingsContainer.Controls.Add(this.JalapenosLabel);
             this.groupBoxToppingsContainer.Controls.Add(this.MushroomsLabel);
-            this.groupBoxToppingsContainer.Controls.Add(this.SausageLabel);
+            this.groupBoxToppingsContainer.Controls.Add(this.OnionsLabel);
             this.groupBoxToppingsContainer.Controls.Add(this.HamLabel);
             this.groupBoxToppingsContainer.Controls.Add(this.PepperoniLabel);
             this.groupBoxToppingsContainer.Controls.Add(this.ToppingsLabel);
@@ -167,61 +199,71 @@
             this.groupBoxToppingsContainer.Controls.Add(this.groupBoxTopping3);
             this.groupBoxToppingsContainer.Controls.Add(this.groupBoxTopping4);
             this.groupBoxToppingsContainer.Controls.Add(this.groupBoxTopping5);
-            this.groupBoxToppingsContainer.Location = new System.Drawing.Point(30, 220);
+            this.groupBoxToppingsContainer.Location = new System.Drawing.Point(30, 210);
             this.groupBoxToppingsContainer.Name = "groupBoxToppingsContainer";
-            this.groupBoxToppingsContainer.Size = new System.Drawing.Size(259, 227);
+            this.groupBoxToppingsContainer.Size = new System.Drawing.Size(259, 207);
             this.groupBoxToppingsContainer.TabIndex = 4;
             this.groupBoxToppingsContainer.TabStop = false;
             // 
-            // TotalPriceLabel
+            // filledButtonCenter
             // 
-            this.TotalPriceLabel.AutoSize = true;
-            this.TotalPriceLabel.Font = new System.Drawing.Font("Sitka Text", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalPriceLabel.Location = new System.Drawing.Point(40, 448);
-            this.TotalPriceLabel.Name = "TotalPriceLabel";
-            this.TotalPriceLabel.Size = new System.Drawing.Size(71, 28);
-            this.TotalPriceLabel.TabIndex = 5;
-            this.TotalPriceLabel.Text = "Total: ";
+            this.filledButtonCenter.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.filledButtonCenter.BackColor = System.Drawing.Color.Transparent;
+            this.filledButtonCenter.Location = new System.Drawing.Point(152, 57);
+            this.filledButtonCenter.Name = "filledButtonCenter";
+            this.filledButtonCenter.Size = new System.Drawing.Size(15, 15);
+            this.filledButtonCenter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.filledButtonCenter.TabIndex = 19;
+            this.filledButtonCenter.TabStop = false;
             // 
-            // JalepenosLabel
+            // radioButtonEmptyToppingDisplay
             // 
-            this.JalepenosLabel.AutoEllipsis = true;
-            this.JalepenosLabel.AutoSize = true;
-            this.JalepenosLabel.Font = new System.Drawing.Font("Sitka Text", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.JalepenosLabel.Location = new System.Drawing.Point(15, 173);
-            this.JalepenosLabel.Name = "JalepenosLabel";
-            this.JalepenosLabel.Size = new System.Drawing.Size(81, 23);
-            this.JalepenosLabel.TabIndex = 15;
-            this.JalepenosLabel.Text = "Jalepenos";
-            this.JalepenosLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.radioButtonEmptyToppingDisplay.AutoSize = true;
+            this.radioButtonEmptyToppingDisplay.Location = new System.Drawing.Point(203, 58);
+            this.radioButtonEmptyToppingDisplay.Name = "radioButtonEmptyToppingDisplay";
+            this.radioButtonEmptyToppingDisplay.Size = new System.Drawing.Size(14, 13);
+            this.radioButtonEmptyToppingDisplay.TabIndex = 18;
+            this.radioButtonEmptyToppingDisplay.UseVisualStyleBackColor = true;
+            // 
+            // JalapenosLabel
+            // 
+            this.JalapenosLabel.AutoEllipsis = true;
+            this.JalapenosLabel.AutoSize = true;
+            this.JalapenosLabel.Font = new System.Drawing.Font("Sitka Text", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.JalapenosLabel.Location = new System.Drawing.Point(15, 167);
+            this.JalapenosLabel.Name = "JalapenosLabel";
+            this.JalapenosLabel.Size = new System.Drawing.Size(82, 23);
+            this.JalapenosLabel.TabIndex = 15;
+            this.JalapenosLabel.Text = "Jalapenos";
+            this.JalapenosLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // MushroomsLabel
             // 
             this.MushroomsLabel.AutoSize = true;
             this.MushroomsLabel.Font = new System.Drawing.Font("Sitka Text", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MushroomsLabel.Location = new System.Drawing.Point(15, 150);
+            this.MushroomsLabel.Location = new System.Drawing.Point(15, 144);
             this.MushroomsLabel.Name = "MushroomsLabel";
             this.MushroomsLabel.Size = new System.Drawing.Size(97, 23);
             this.MushroomsLabel.TabIndex = 13;
             this.MushroomsLabel.Text = "Mushrooms";
             this.MushroomsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // SausageLabel
+            // OnionsLabel
             // 
-            this.SausageLabel.AutoSize = true;
-            this.SausageLabel.Font = new System.Drawing.Font("Sitka Text", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SausageLabel.Location = new System.Drawing.Point(15, 127);
-            this.SausageLabel.Name = "SausageLabel";
-            this.SausageLabel.Size = new System.Drawing.Size(71, 23);
-            this.SausageLabel.TabIndex = 7;
-            this.SausageLabel.Text = "Sausage";
-            this.SausageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.OnionsLabel.AutoSize = true;
+            this.OnionsLabel.Font = new System.Drawing.Font("Sitka Text", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OnionsLabel.Location = new System.Drawing.Point(15, 121);
+            this.OnionsLabel.Name = "OnionsLabel";
+            this.OnionsLabel.Size = new System.Drawing.Size(61, 23);
+            this.OnionsLabel.TabIndex = 7;
+            this.OnionsLabel.Text = "Onions";
+            this.OnionsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // HamLabel
             // 
             this.HamLabel.AutoSize = true;
             this.HamLabel.Font = new System.Drawing.Font("Sitka Text", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HamLabel.Location = new System.Drawing.Point(15, 104);
+            this.HamLabel.Location = new System.Drawing.Point(15, 98);
             this.HamLabel.Name = "HamLabel";
             this.HamLabel.Size = new System.Drawing.Size(45, 23);
             this.HamLabel.TabIndex = 6;
@@ -232,7 +274,7 @@
             // 
             this.PepperoniLabel.AutoSize = true;
             this.PepperoniLabel.Font = new System.Drawing.Font("Sitka Text", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PepperoniLabel.Location = new System.Drawing.Point(15, 81);
+            this.PepperoniLabel.Location = new System.Drawing.Point(15, 75);
             this.PepperoniLabel.Name = "PepperoniLabel";
             this.PepperoniLabel.Size = new System.Drawing.Size(83, 23);
             this.PepperoniLabel.TabIndex = 5;
@@ -243,7 +285,7 @@
             // 
             this.ToppingsLabel.AutoSize = true;
             this.ToppingsLabel.Font = new System.Drawing.Font("Sitka Text", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ToppingsLabel.Location = new System.Drawing.Point(15, 24);
+            this.ToppingsLabel.Location = new System.Drawing.Point(15, 18);
             this.ToppingsLabel.Name = "ToppingsLabel";
             this.ToppingsLabel.Size = new System.Drawing.Size(173, 23);
             this.ToppingsLabel.TabIndex = 5;
@@ -252,14 +294,24 @@
             // 
             // groupBoxTopping1
             // 
+            this.groupBoxTopping1.Controls.Add(this.radioButtonPepperoniNone);
             this.groupBoxTopping1.Controls.Add(this.radioButtonPepperoniRight);
             this.groupBoxTopping1.Controls.Add(this.radioButtonPepperoniCenter);
             this.groupBoxTopping1.Controls.Add(this.radioButtonPepperoniLeft);
-            this.groupBoxTopping1.Location = new System.Drawing.Point(123, 77);
+            this.groupBoxTopping1.Location = new System.Drawing.Point(123, 71);
             this.groupBoxTopping1.Name = "groupBoxTopping1";
-            this.groupBoxTopping1.Size = new System.Drawing.Size(75, 30);
+            this.groupBoxTopping1.Size = new System.Drawing.Size(100, 30);
             this.groupBoxTopping1.TabIndex = 9;
             this.groupBoxTopping1.TabStop = false;
+            // 
+            // radioButtonPepperoniNone
+            // 
+            this.radioButtonPepperoniNone.AutoSize = true;
+            this.radioButtonPepperoniNone.Location = new System.Drawing.Point(80, 11);
+            this.radioButtonPepperoniNone.Name = "radioButtonPepperoniNone";
+            this.radioButtonPepperoniNone.Size = new System.Drawing.Size(14, 13);
+            this.radioButtonPepperoniNone.TabIndex = 11;
+            this.radioButtonPepperoniNone.UseVisualStyleBackColor = true;
             // 
             // radioButtonPepperoniRight
             // 
@@ -268,7 +320,6 @@
             this.radioButtonPepperoniRight.Name = "radioButtonPepperoniRight";
             this.radioButtonPepperoniRight.Size = new System.Drawing.Size(14, 13);
             this.radioButtonPepperoniRight.TabIndex = 10;
-            this.radioButtonPepperoniRight.TabStop = true;
             this.radioButtonPepperoniRight.UseVisualStyleBackColor = true;
             // 
             // radioButtonPepperoniCenter
@@ -278,7 +329,6 @@
             this.radioButtonPepperoniCenter.Name = "radioButtonPepperoniCenter";
             this.radioButtonPepperoniCenter.Size = new System.Drawing.Size(14, 13);
             this.radioButtonPepperoniCenter.TabIndex = 9;
-            this.radioButtonPepperoniCenter.TabStop = true;
             this.radioButtonPepperoniCenter.UseVisualStyleBackColor = true;
             // 
             // radioButtonPepperoniLeft
@@ -288,19 +338,28 @@
             this.radioButtonPepperoniLeft.Name = "radioButtonPepperoniLeft";
             this.radioButtonPepperoniLeft.Size = new System.Drawing.Size(14, 13);
             this.radioButtonPepperoniLeft.TabIndex = 8;
-            this.radioButtonPepperoniLeft.TabStop = true;
             this.radioButtonPepperoniLeft.UseVisualStyleBackColor = true;
             // 
             // groupBoxTopping2
             // 
+            this.groupBoxTopping2.Controls.Add(this.radioButtonHamNone);
             this.groupBoxTopping2.Controls.Add(this.radioButtonHamCenter);
             this.groupBoxTopping2.Controls.Add(this.radioButtonHamRight);
             this.groupBoxTopping2.Controls.Add(this.radioButtonHamLeft);
-            this.groupBoxTopping2.Location = new System.Drawing.Point(123, 100);
+            this.groupBoxTopping2.Location = new System.Drawing.Point(123, 94);
             this.groupBoxTopping2.Name = "groupBoxTopping2";
-            this.groupBoxTopping2.Size = new System.Drawing.Size(75, 30);
+            this.groupBoxTopping2.Size = new System.Drawing.Size(100, 30);
             this.groupBoxTopping2.TabIndex = 11;
             this.groupBoxTopping2.TabStop = false;
+            // 
+            // radioButtonHamNone
+            // 
+            this.radioButtonHamNone.AutoSize = true;
+            this.radioButtonHamNone.Location = new System.Drawing.Point(80, 11);
+            this.radioButtonHamNone.Name = "radioButtonHamNone";
+            this.radioButtonHamNone.Size = new System.Drawing.Size(14, 13);
+            this.radioButtonHamNone.TabIndex = 12;
+            this.radioButtonHamNone.UseVisualStyleBackColor = true;
             // 
             // radioButtonHamCenter
             // 
@@ -309,7 +368,6 @@
             this.radioButtonHamCenter.Name = "radioButtonHamCenter";
             this.radioButtonHamCenter.Size = new System.Drawing.Size(14, 13);
             this.radioButtonHamCenter.TabIndex = 9;
-            this.radioButtonHamCenter.TabStop = true;
             this.radioButtonHamCenter.UseVisualStyleBackColor = true;
             // 
             // radioButtonHamRight
@@ -319,7 +377,6 @@
             this.radioButtonHamRight.Name = "radioButtonHamRight";
             this.radioButtonHamRight.Size = new System.Drawing.Size(14, 13);
             this.radioButtonHamRight.TabIndex = 10;
-            this.radioButtonHamRight.TabStop = true;
             this.radioButtonHamRight.UseVisualStyleBackColor = true;
             // 
             // radioButtonHamLeft
@@ -329,60 +386,76 @@
             this.radioButtonHamLeft.Name = "radioButtonHamLeft";
             this.radioButtonHamLeft.Size = new System.Drawing.Size(14, 13);
             this.radioButtonHamLeft.TabIndex = 8;
-            this.radioButtonHamLeft.TabStop = true;
             this.radioButtonHamLeft.UseVisualStyleBackColor = true;
             // 
             // groupBoxTopping3
             // 
-            this.groupBoxTopping3.Controls.Add(this.radioButtonSausageCenter);
-            this.groupBoxTopping3.Controls.Add(this.radioButtonSausageRight);
-            this.groupBoxTopping3.Controls.Add(this.radioButtonSausageLeft);
-            this.groupBoxTopping3.Location = new System.Drawing.Point(123, 123);
+            this.groupBoxTopping3.Controls.Add(this.radioButtonOnionsNone);
+            this.groupBoxTopping3.Controls.Add(this.radioButtonOnionsCenter);
+            this.groupBoxTopping3.Controls.Add(this.radioButtonOnionsRight);
+            this.groupBoxTopping3.Controls.Add(this.radioButtonOnionsLeft);
+            this.groupBoxTopping3.Location = new System.Drawing.Point(123, 117);
             this.groupBoxTopping3.Name = "groupBoxTopping3";
-            this.groupBoxTopping3.Size = new System.Drawing.Size(75, 30);
+            this.groupBoxTopping3.Size = new System.Drawing.Size(100, 30);
             this.groupBoxTopping3.TabIndex = 12;
             this.groupBoxTopping3.TabStop = false;
             // 
-            // radioButtonSausageCenter
+            // radioButtonOnionsNone
             // 
-            this.radioButtonSausageCenter.AutoSize = true;
-            this.radioButtonSausageCenter.Location = new System.Drawing.Point(30, 11);
-            this.radioButtonSausageCenter.Name = "radioButtonSausageCenter";
-            this.radioButtonSausageCenter.Size = new System.Drawing.Size(14, 13);
-            this.radioButtonSausageCenter.TabIndex = 9;
-            this.radioButtonSausageCenter.TabStop = true;
-            this.radioButtonSausageCenter.UseVisualStyleBackColor = true;
+            this.radioButtonOnionsNone.AutoSize = true;
+            this.radioButtonOnionsNone.Location = new System.Drawing.Point(80, 11);
+            this.radioButtonOnionsNone.Name = "radioButtonOnionsNone";
+            this.radioButtonOnionsNone.Size = new System.Drawing.Size(14, 13);
+            this.radioButtonOnionsNone.TabIndex = 13;
+            this.radioButtonOnionsNone.UseVisualStyleBackColor = true;
             // 
-            // radioButtonSausageRight
+            // radioButtonOnionsCenter
             // 
-            this.radioButtonSausageRight.AutoSize = true;
-            this.radioButtonSausageRight.Location = new System.Drawing.Point(55, 11);
-            this.radioButtonSausageRight.Name = "radioButtonSausageRight";
-            this.radioButtonSausageRight.Size = new System.Drawing.Size(14, 13);
-            this.radioButtonSausageRight.TabIndex = 10;
-            this.radioButtonSausageRight.TabStop = true;
-            this.radioButtonSausageRight.UseVisualStyleBackColor = true;
+            this.radioButtonOnionsCenter.AutoSize = true;
+            this.radioButtonOnionsCenter.Location = new System.Drawing.Point(30, 11);
+            this.radioButtonOnionsCenter.Name = "radioButtonOnionsCenter";
+            this.radioButtonOnionsCenter.Size = new System.Drawing.Size(14, 13);
+            this.radioButtonOnionsCenter.TabIndex = 9;
+            this.radioButtonOnionsCenter.UseVisualStyleBackColor = true;
             // 
-            // radioButtonSausageLeft
+            // radioButtonOnionsRight
             // 
-            this.radioButtonSausageLeft.AutoSize = true;
-            this.radioButtonSausageLeft.Location = new System.Drawing.Point(5, 11);
-            this.radioButtonSausageLeft.Name = "radioButtonSausageLeft";
-            this.radioButtonSausageLeft.Size = new System.Drawing.Size(14, 13);
-            this.radioButtonSausageLeft.TabIndex = 8;
-            this.radioButtonSausageLeft.TabStop = true;
-            this.radioButtonSausageLeft.UseVisualStyleBackColor = true;
+            this.radioButtonOnionsRight.AutoSize = true;
+            this.radioButtonOnionsRight.Location = new System.Drawing.Point(55, 11);
+            this.radioButtonOnionsRight.Name = "radioButtonOnionsRight";
+            this.radioButtonOnionsRight.Size = new System.Drawing.Size(14, 13);
+            this.radioButtonOnionsRight.TabIndex = 10;
+            this.radioButtonOnionsRight.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonOnionsLeft
+            // 
+            this.radioButtonOnionsLeft.AutoSize = true;
+            this.radioButtonOnionsLeft.Location = new System.Drawing.Point(5, 11);
+            this.radioButtonOnionsLeft.Name = "radioButtonOnionsLeft";
+            this.radioButtonOnionsLeft.Size = new System.Drawing.Size(14, 13);
+            this.radioButtonOnionsLeft.TabIndex = 8;
+            this.radioButtonOnionsLeft.UseVisualStyleBackColor = true;
             // 
             // groupBoxTopping4
             // 
+            this.groupBoxTopping4.Controls.Add(this.radioButtonMushroomsNone);
             this.groupBoxTopping4.Controls.Add(this.radioButtonMushroomsCenter);
             this.groupBoxTopping4.Controls.Add(this.radioButtonMushroomsRight);
             this.groupBoxTopping4.Controls.Add(this.radioButtonMushroomsLeft);
-            this.groupBoxTopping4.Location = new System.Drawing.Point(123, 146);
+            this.groupBoxTopping4.Location = new System.Drawing.Point(123, 140);
             this.groupBoxTopping4.Name = "groupBoxTopping4";
-            this.groupBoxTopping4.Size = new System.Drawing.Size(75, 30);
+            this.groupBoxTopping4.Size = new System.Drawing.Size(100, 30);
             this.groupBoxTopping4.TabIndex = 14;
             this.groupBoxTopping4.TabStop = false;
+            // 
+            // radioButtonMushroomsNone
+            // 
+            this.radioButtonMushroomsNone.AutoSize = true;
+            this.radioButtonMushroomsNone.Location = new System.Drawing.Point(80, 11);
+            this.radioButtonMushroomsNone.Name = "radioButtonMushroomsNone";
+            this.radioButtonMushroomsNone.Size = new System.Drawing.Size(14, 13);
+            this.radioButtonMushroomsNone.TabIndex = 14;
+            this.radioButtonMushroomsNone.UseVisualStyleBackColor = true;
             // 
             // radioButtonMushroomsCenter
             // 
@@ -391,7 +464,6 @@
             this.radioButtonMushroomsCenter.Name = "radioButtonMushroomsCenter";
             this.radioButtonMushroomsCenter.Size = new System.Drawing.Size(14, 13);
             this.radioButtonMushroomsCenter.TabIndex = 9;
-            this.radioButtonMushroomsCenter.TabStop = true;
             this.radioButtonMushroomsCenter.UseVisualStyleBackColor = true;
             // 
             // radioButtonMushroomsRight
@@ -401,7 +473,6 @@
             this.radioButtonMushroomsRight.Name = "radioButtonMushroomsRight";
             this.radioButtonMushroomsRight.Size = new System.Drawing.Size(14, 13);
             this.radioButtonMushroomsRight.TabIndex = 10;
-            this.radioButtonMushroomsRight.TabStop = true;
             this.radioButtonMushroomsRight.UseVisualStyleBackColor = true;
             // 
             // radioButtonMushroomsLeft
@@ -411,63 +482,218 @@
             this.radioButtonMushroomsLeft.Name = "radioButtonMushroomsLeft";
             this.radioButtonMushroomsLeft.Size = new System.Drawing.Size(14, 13);
             this.radioButtonMushroomsLeft.TabIndex = 8;
-            this.radioButtonMushroomsLeft.TabStop = true;
             this.radioButtonMushroomsLeft.UseVisualStyleBackColor = true;
             // 
             // groupBoxTopping5
             // 
-            this.groupBoxTopping5.Controls.Add(this.radioButtonJalepenosCenter);
-            this.groupBoxTopping5.Controls.Add(this.radioButtonJalepenosRight);
-            this.groupBoxTopping5.Controls.Add(this.radioButtonJalepenosLeft);
-            this.groupBoxTopping5.Location = new System.Drawing.Point(123, 169);
+            this.groupBoxTopping5.Controls.Add(this.radioButtonJalapenosNone);
+            this.groupBoxTopping5.Controls.Add(this.radioButtonJalapenosCenter);
+            this.groupBoxTopping5.Controls.Add(this.radioButtonJalapenosRight);
+            this.groupBoxTopping5.Controls.Add(this.radioButtonJalapenosLeft);
+            this.groupBoxTopping5.Location = new System.Drawing.Point(123, 163);
             this.groupBoxTopping5.Name = "groupBoxTopping5";
-            this.groupBoxTopping5.Size = new System.Drawing.Size(75, 30);
+            this.groupBoxTopping5.Size = new System.Drawing.Size(100, 30);
             this.groupBoxTopping5.TabIndex = 15;
             this.groupBoxTopping5.TabStop = false;
             // 
-            // radioButtonJalepenosCenter
+            // radioButtonJalapenosNone
             // 
-            this.radioButtonJalepenosCenter.AutoSize = true;
-            this.radioButtonJalepenosCenter.Location = new System.Drawing.Point(30, 11);
-            this.radioButtonJalepenosCenter.Name = "radioButtonJalepenosCenter";
-            this.radioButtonJalepenosCenter.Size = new System.Drawing.Size(14, 13);
-            this.radioButtonJalepenosCenter.TabIndex = 9;
-            this.radioButtonJalepenosCenter.TabStop = true;
-            this.radioButtonJalepenosCenter.UseVisualStyleBackColor = true;
+            this.radioButtonJalapenosNone.AutoSize = true;
+            this.radioButtonJalapenosNone.Location = new System.Drawing.Point(80, 11);
+            this.radioButtonJalapenosNone.Name = "radioButtonJalapenosNone";
+            this.radioButtonJalapenosNone.Size = new System.Drawing.Size(14, 13);
+            this.radioButtonJalapenosNone.TabIndex = 15;
+            this.radioButtonJalapenosNone.UseVisualStyleBackColor = true;
             // 
-            // radioButtonJalepenosRight
+            // radioButtonJalapenosCenter
             // 
-            this.radioButtonJalepenosRight.AutoSize = true;
-            this.radioButtonJalepenosRight.Location = new System.Drawing.Point(55, 11);
-            this.radioButtonJalepenosRight.Name = "radioButtonJalepenosRight";
-            this.radioButtonJalepenosRight.Size = new System.Drawing.Size(14, 13);
-            this.radioButtonJalepenosRight.TabIndex = 10;
-            this.radioButtonJalepenosRight.TabStop = true;
-            this.radioButtonJalepenosRight.UseVisualStyleBackColor = true;
+            this.radioButtonJalapenosCenter.AutoSize = true;
+            this.radioButtonJalapenosCenter.Location = new System.Drawing.Point(30, 11);
+            this.radioButtonJalapenosCenter.Name = "radioButtonJalapenosCenter";
+            this.radioButtonJalapenosCenter.Size = new System.Drawing.Size(14, 13);
+            this.radioButtonJalapenosCenter.TabIndex = 9;
+            this.radioButtonJalapenosCenter.UseVisualStyleBackColor = true;
             // 
-            // radioButtonJalepenosLeft
+            // radioButtonJalapenosRight
             // 
-            this.radioButtonJalepenosLeft.AutoSize = true;
-            this.radioButtonJalepenosLeft.Location = new System.Drawing.Point(5, 11);
-            this.radioButtonJalepenosLeft.Name = "radioButtonJalepenosLeft";
-            this.radioButtonJalepenosLeft.Size = new System.Drawing.Size(14, 13);
-            this.radioButtonJalepenosLeft.TabIndex = 8;
-            this.radioButtonJalepenosLeft.TabStop = true;
-            this.radioButtonJalepenosLeft.UseVisualStyleBackColor = true;
+            this.radioButtonJalapenosRight.AutoSize = true;
+            this.radioButtonJalapenosRight.Location = new System.Drawing.Point(55, 11);
+            this.radioButtonJalapenosRight.Name = "radioButtonJalapenosRight";
+            this.radioButtonJalapenosRight.Size = new System.Drawing.Size(14, 13);
+            this.radioButtonJalapenosRight.TabIndex = 10;
+            this.radioButtonJalapenosRight.UseVisualStyleBackColor = true;
             // 
-            // imageList1
+            // radioButtonJalapenosLeft
             // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.radioButtonJalapenosLeft.AutoSize = true;
+            this.radioButtonJalapenosLeft.Location = new System.Drawing.Point(5, 11);
+            this.radioButtonJalapenosLeft.Name = "radioButtonJalapenosLeft";
+            this.radioButtonJalapenosLeft.Size = new System.Drawing.Size(14, 13);
+            this.radioButtonJalapenosLeft.TabIndex = 8;
+            this.radioButtonJalapenosLeft.UseVisualStyleBackColor = true;
+            // 
+            // PizzaTotalLabel
+            // 
+            this.PizzaTotalLabel.AutoSize = true;
+            this.PizzaTotalLabel.Font = new System.Drawing.Font("Sitka Text", 12.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PizzaTotalLabel.Location = new System.Drawing.Point(9, 12);
+            this.PizzaTotalLabel.Name = "PizzaTotalLabel";
+            this.PizzaTotalLabel.Size = new System.Drawing.Size(114, 24);
+            this.PizzaTotalLabel.TabIndex = 5;
+            this.PizzaTotalLabel.Text = "Pizza Total: ";
+            // 
+            // toppingImageList
+            // 
+            this.toppingImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("toppingImageList.ImageStream")));
+            this.toppingImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.toppingImageList.Images.SetKeyName(0, "crust.png");
+            this.toppingImageList.Images.SetKeyName(1, "chicken.png");
+            this.toppingImageList.Images.SetKeyName(2, "doublecheese.png");
+            this.toppingImageList.Images.SetKeyName(3, "doublesauce.png");
+            this.toppingImageList.Images.SetKeyName(4, "full.png");
+            this.toppingImageList.Images.SetKeyName(5, "greenpepper.png");
+            this.toppingImageList.Images.SetKeyName(6, "ham.png");
+            this.toppingImageList.Images.SetKeyName(7, "jalapeno.png");
+            this.toppingImageList.Images.SetKeyName(8, "left.png");
+            this.toppingImageList.Images.SetKeyName(9, "mushroom.png");
+            this.toppingImageList.Images.SetKeyName(10, "none.png");
+            this.toppingImageList.Images.SetKeyName(11, "onion.png");
+            this.toppingImageList.Images.SetKeyName(12, "pepperoni.png");
+            // 
+            // pbPizza
+            // 
+            this.pbPizza.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbPizza.Location = new System.Drawing.Point(364, 136);
+            this.pbPizza.Name = "pbPizza";
+            this.pbPizza.Size = new System.Drawing.Size(250, 250);
+            this.pbPizza.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPizza.TabIndex = 6;
+            this.pbPizza.TabStop = false;
+            // 
+            // addToCartButton
+            // 
+            this.addToCartButton.BackColor = System.Drawing.Color.Snow;
+            this.addToCartButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addToCartButton.Font = new System.Drawing.Font("Sitka Subheading", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addToCartButton.Location = new System.Drawing.Point(442, 400);
+            this.addToCartButton.Name = "addToCartButton";
+            this.addToCartButton.Size = new System.Drawing.Size(100, 25);
+            this.addToCartButton.TabIndex = 7;
+            this.addToCartButton.Text = "ADD TO CART";
+            this.addToCartButton.UseVisualStyleBackColor = false;
+            this.addToCartButton.Click += new System.EventHandler(this.addToCartButton_Click);
+            // 
+            // itemsInCartLabel
+            // 
+            this.itemsInCartLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.itemsInCartLabel.AutoSize = true;
+            this.itemsInCartLabel.Font = new System.Drawing.Font("Sitka Banner", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.itemsInCartLabel.Location = new System.Drawing.Point(42, 8);
+            this.itemsInCartLabel.Name = "itemsInCartLabel";
+            this.itemsInCartLabel.Size = new System.Drawing.Size(126, 30);
+            this.itemsInCartLabel.TabIndex = 8;
+            this.itemsInCartLabel.Text = "Items in Cart";
+            this.itemsInCartLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ordersListBox
+            // 
+            this.ordersListBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ordersListBox.BackColor = System.Drawing.Color.RosyBrown;
+            this.ordersListBox.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ordersListBox.FormattingEnabled = true;
+            this.ordersListBox.HorizontalScrollbar = true;
+            this.ordersListBox.ItemHeight = 23;
+            this.ordersListBox.Location = new System.Drawing.Point(681, 141);
+            this.ordersListBox.Name = "ordersListBox";
+            this.ordersListBox.Size = new System.Drawing.Size(206, 280);
+            this.ordersListBox.TabIndex = 9;
+            this.ordersListBox.Click += new System.EventHandler(this.ordersListBox_Click);
+            // 
+            // GrandTotalLabel
+            // 
+            this.GrandTotalLabel.AutoSize = true;
+            this.GrandTotalLabel.Font = new System.Drawing.Font("Sitka Text", 12.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GrandTotalLabel.Location = new System.Drawing.Point(3, 12);
+            this.GrandTotalLabel.Name = "GrandTotalLabel";
+            this.GrandTotalLabel.Size = new System.Drawing.Size(120, 24);
+            this.GrandTotalLabel.TabIndex = 10;
+            this.GrandTotalLabel.Text = "Grand Total: ";
+            // 
+            // filledButtonLeft
+            // 
+            this.filledButtonLeft.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.filledButtonLeft.BackColor = System.Drawing.Color.Transparent;
+            this.filledButtonLeft.Location = new System.Drawing.Point(127, 57);
+            this.filledButtonLeft.Name = "filledButtonLeft";
+            this.filledButtonLeft.Size = new System.Drawing.Size(15, 15);
+            this.filledButtonLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.filledButtonLeft.TabIndex = 20;
+            this.filledButtonLeft.TabStop = false;
+            // 
+            // filledButtonRight
+            // 
+            this.filledButtonRight.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.filledButtonRight.BackColor = System.Drawing.Color.Transparent;
+            this.filledButtonRight.Location = new System.Drawing.Point(177, 57);
+            this.filledButtonRight.Name = "filledButtonRight";
+            this.filledButtonRight.Size = new System.Drawing.Size(15, 15);
+            this.filledButtonRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.filledButtonRight.TabIndex = 21;
+            this.filledButtonRight.TabStop = false;
+            // 
+            // ExitButton
+            // 
+            this.ExitButton.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ExitButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ExitButton.Font = new System.Drawing.Font("Sitka Subheading", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitButton.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.ExitButton.Location = new System.Drawing.Point(845, 19);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(50, 25);
+            this.ExitButton.TabIndex = 11;
+            this.ExitButton.Text = "EXIT";
+            this.ExitButton.UseVisualStyleBackColor = false;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
+            // groupBoxItemsInCartText
+            // 
+            this.groupBoxItemsInCartText.Controls.Add(this.itemsInCartLabel);
+            this.groupBoxItemsInCartText.Location = new System.Drawing.Point(681, 91);
+            this.groupBoxItemsInCartText.Name = "groupBoxItemsInCartText";
+            this.groupBoxItemsInCartText.Size = new System.Drawing.Size(206, 44);
+            this.groupBoxItemsInCartText.TabIndex = 11;
+            this.groupBoxItemsInCartText.TabStop = false;
+            // 
+            // groupBoxGrandTotal
+            // 
+            this.groupBoxGrandTotal.Controls.Add(this.GrandTotalLabel);
+            this.groupBoxGrandTotal.Location = new System.Drawing.Point(681, 422);
+            this.groupBoxGrandTotal.Name = "groupBoxGrandTotal";
+            this.groupBoxGrandTotal.Size = new System.Drawing.Size(206, 44);
+            this.groupBoxGrandTotal.TabIndex = 12;
+            this.groupBoxGrandTotal.TabStop = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.PizzaTotalLabel);
+            this.groupBox1.Location = new System.Drawing.Point(30, 421);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(259, 44);
+            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(900, 484);
-            this.Controls.Add(this.TotalPriceLabel);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxGrandTotal);
+            this.Controls.Add(this.groupBoxItemsInCartText);
+            this.Controls.Add(this.ordersListBox);
+            this.Controls.Add(this.addToCartButton);
+            this.Controls.Add(this.pbPizza);
             this.Controls.Add(this.Header);
             this.Controls.Add(this.groupBoxSizeAndCrustContainer);
             this.Controls.Add(this.groupBoxToppingsContainer);
@@ -479,6 +705,7 @@
             this.groupBoxSizeAndCrustContainer.PerformLayout();
             this.groupBoxToppingsContainer.ResumeLayout(false);
             this.groupBoxToppingsContainer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.filledButtonCenter)).EndInit();
             this.groupBoxTopping1.ResumeLayout(false);
             this.groupBoxTopping1.PerformLayout();
             this.groupBoxTopping2.ResumeLayout(false);
@@ -489,8 +716,16 @@
             this.groupBoxTopping4.PerformLayout();
             this.groupBoxTopping5.ResumeLayout(false);
             this.groupBoxTopping5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPizza)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filledButtonLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filledButtonRight)).EndInit();
+            this.groupBoxItemsInCartText.ResumeLayout(false);
+            this.groupBoxItemsInCartText.PerformLayout();
+            this.groupBoxGrandTotal.ResumeLayout(false);
+            this.groupBoxGrandTotal.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -505,7 +740,7 @@
         private System.Windows.Forms.Label CrustLabel;
         private System.Windows.Forms.Label SizeLabel;
         private System.Windows.Forms.Label ToppingsLabel;
-        private System.Windows.Forms.Label SausageLabel;
+        private System.Windows.Forms.Label OnionsLabel;
         private System.Windows.Forms.Label HamLabel;
         private System.Windows.Forms.Label PepperoniLabel;
         private System.Windows.Forms.RadioButton radioButtonPepperoniLeft;
@@ -513,9 +748,9 @@
         private System.Windows.Forms.RadioButton radioButtonPepperoniCenter;
         private System.Windows.Forms.RadioButton radioButtonPepperoniRight;
         private System.Windows.Forms.GroupBox groupBoxTopping3;
-        private System.Windows.Forms.RadioButton radioButtonSausageCenter;
-        private System.Windows.Forms.RadioButton radioButtonSausageRight;
-        private System.Windows.Forms.RadioButton radioButtonSausageLeft;
+        private System.Windows.Forms.RadioButton radioButtonOnionsCenter;
+        private System.Windows.Forms.RadioButton radioButtonOnionsRight;
+        private System.Windows.Forms.RadioButton radioButtonOnionsLeft;
         private System.Windows.Forms.GroupBox groupBoxTopping2;
         private System.Windows.Forms.RadioButton radioButtonHamCenter;
         private System.Windows.Forms.RadioButton radioButtonHamRight;
@@ -525,13 +760,31 @@
         private System.Windows.Forms.RadioButton radioButtonMushroomsCenter;
         private System.Windows.Forms.RadioButton radioButtonMushroomsRight;
         private System.Windows.Forms.RadioButton radioButtonMushroomsLeft;
-        private System.Windows.Forms.Label JalepenosLabel;
+        private System.Windows.Forms.Label JalapenosLabel;
         private System.Windows.Forms.GroupBox groupBoxTopping5;
-        private System.Windows.Forms.RadioButton radioButtonJalepenosCenter;
-        private System.Windows.Forms.RadioButton radioButtonJalepenosRight;
-        private System.Windows.Forms.RadioButton radioButtonJalepenosLeft;
-        private System.Windows.Forms.Label TotalPriceLabel;
-        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.RadioButton radioButtonJalapenosCenter;
+        private System.Windows.Forms.RadioButton radioButtonJalapenosRight;
+        private System.Windows.Forms.RadioButton radioButtonJalapenosLeft;
+        private System.Windows.Forms.Label PizzaTotalLabel;
+        private System.Windows.Forms.ImageList toppingImageList;
+        private System.Windows.Forms.PictureBox pbPizza;
+        private System.Windows.Forms.RadioButton radioButtonPepperoniNone;
+        private System.Windows.Forms.RadioButton radioButtonHamNone;
+        private System.Windows.Forms.RadioButton radioButtonOnionsNone;
+        private System.Windows.Forms.RadioButton radioButtonMushroomsNone;
+        private System.Windows.Forms.RadioButton radioButtonJalapenosNone;
+        private System.Windows.Forms.Button addToCartButton;
+        private System.Windows.Forms.Label itemsInCartLabel;
+        private System.Windows.Forms.ListBox ordersListBox;
+        private System.Windows.Forms.Label GrandTotalLabel;
+        private System.Windows.Forms.RadioButton radioButtonEmptyToppingDisplay;
+        private System.Windows.Forms.PictureBox filledButtonCenter;
+        private System.Windows.Forms.PictureBox filledButtonLeft;
+        private System.Windows.Forms.PictureBox filledButtonRight;
+        private System.Windows.Forms.Button ExitButton;
+        private System.Windows.Forms.GroupBox groupBoxItemsInCartText;
+        private System.Windows.Forms.GroupBox groupBoxGrandTotal;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
