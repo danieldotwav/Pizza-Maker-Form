@@ -13,7 +13,7 @@ A Windows Forms application developed in C#. It allows users to create custom pi
 
 ## Features
 
-![PizzaMakerForm Screenshot](https://github.com/danieldotwav/Pizza-Maker-Form/issues/1)
+![PizzaMakerForm Screenshot](https://private-user-images.githubusercontent.com/31682816/285628228-18db6dfe-df06-4e77-80d3-df4f3e8cf19f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDA5NzE5ODMsIm5iZiI6MTcwMDk3MTY4MywicGF0aCI6Ii8zMTY4MjgxNi8yODU2MjgyMjgtMThkYjZkZmUtZGYwNi00ZTc3LTgwZDMtZGY0ZjNlOGNmMTlmLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzExMjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMxMTI2VDA0MDgwM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTZjZDc5ODQzYTIwNGZjMDU1NzVmY2I2ZDk0NmI5MGNhMzlkODlhYTBlMjNlYzg2NmI2NTU4MmFmMWNlZjljZWUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.alRjrv3fAm4bscpuRDruJT_ywyBIY-iLERUEynLU3S0)
 
 - **Dynamic Pizza Visualization:** Utilizes PictureBox to dynamically display the pizza's appearance as toppings and sizes are chosen.
 - **Custom Pricing Logic:** Implements complex pricing logic, accounting for different sizes, crust types, and combinations of toppings.
