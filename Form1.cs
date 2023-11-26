@@ -1,12 +1,10 @@
-﻿// LAB_11.2_DANIEL_RIVAS
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace LAB_11._2_DANIEL_RIVAS
+namespace PizzaMakerForm
 {
     public partial class Form1 : Form
     {
@@ -20,9 +18,10 @@ namespace LAB_11._2_DANIEL_RIVAS
         private decimal TwelveInchPrice = 12m;
         private decimal FourteenInchPrice = 14m;
 
-        private enum ToppingType
+        private enum ToppingPosition
         {
-            Half,
+            LeftHalf,
+            RightHalf,
             Full
         }
 
@@ -160,7 +159,7 @@ namespace LAB_11._2_DANIEL_RIVAS
 
             return baselineImage;
         }
-        
+
         private void UpdatePizzaWithToppings()
         {
             // Start with the baseline image
@@ -171,90 +170,91 @@ namespace LAB_11._2_DANIEL_RIVAS
                 g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
                 g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
-                int halfWidth = pizzaWithToppings.Width / 2;
+                int width = pizzaWithToppings.Width;
                 int height = pizzaWithToppings.Height;
 
-                //////////////////////////////
-                ///// Draw Toppings
-                //////////////////////////
-
+                // Pepperoni
                 if (!radioButtonPepperoniNone.Checked)
                 {
                     if (radioButtonPepperoniLeft.Checked)
                     {
-                        DrawToppingHalf(g, radioButtonPepperoniLeft, Properties.Resources.pepperoni, "Left", halfWidth, height);
+                        DrawTopping(g, radioButtonPepperoniLeft, Properties.Resources.pepperoni, ToppingPosition.LeftHalf, width, height);
                     }
                     else if (radioButtonPepperoniRight.Checked)
                     {
-                        DrawToppingHalf(g, radioButtonPepperoniRight, Properties.Resources.pepperoni, "Right", halfWidth, height);
+                        DrawTopping(g, radioButtonPepperoniRight, Properties.Resources.pepperoni, ToppingPosition.RightHalf, width, height);
                     }
                     else if (radioButtonPepperoniCenter.Checked)
                     {
-                        DrawToppingFull(g, radioButtonPepperoniCenter, Properties.Resources.pepperoni, pizzaWithToppings.Width, height);
+                        DrawTopping(g, radioButtonPepperoniCenter, Properties.Resources.pepperoni, ToppingPosition.Full, width, height);
                     }
                 }
-                
+
+                // Ham
                 if (!radioButtonHamNone.Checked)
                 {
                     if (radioButtonHamLeft.Checked)
                     {
-                        DrawToppingHalf(g, radioButtonHamLeft, Properties.Resources.ham, "Left", halfWidth, height);
+                        DrawTopping(g, radioButtonHamLeft, Properties.Resources.ham, ToppingPosition.LeftHalf, width, height);
                     }
                     else if (radioButtonHamRight.Checked)
                     {
-                        DrawToppingHalf(g, radioButtonHamRight, Properties.Resources.ham, "Right", halfWidth, height);
+                        DrawTopping(g, radioButtonHamRight, Properties.Resources.ham, ToppingPosition.RightHalf, width, height);
                     }
                     else if (radioButtonHamCenter.Checked)
                     {
-                        DrawToppingFull(g, radioButtonHamCenter, Properties.Resources.ham, pizzaWithToppings.Width, height);
+                        DrawTopping(g, radioButtonHamCenter, Properties.Resources.ham, ToppingPosition.Full, width, height);
                     }
                 }
-                
+
+                // Onions
                 if (!radioButtonOnionsNone.Checked)
                 {
                     if (radioButtonOnionsLeft.Checked)
                     {
-                        DrawToppingHalf(g, radioButtonOnionsLeft, Properties.Resources.onion, "Left", halfWidth, height);
+                        DrawTopping(g, radioButtonOnionsLeft, Properties.Resources.onion, ToppingPosition.LeftHalf, width, height);
                     }
                     else if (radioButtonOnionsRight.Checked)
                     {
-                        DrawToppingHalf(g, radioButtonOnionsRight, Properties.Resources.onion, "Right", halfWidth, height);
+                        DrawTopping(g, radioButtonOnionsRight, Properties.Resources.onion, ToppingPosition.RightHalf, width, height);
                     }
                     else if (radioButtonOnionsCenter.Checked)
                     {
-                        DrawToppingFull(g, radioButtonOnionsCenter, Properties.Resources.onion, pizzaWithToppings.Width, height);
+                        DrawTopping(g, radioButtonOnionsCenter, Properties.Resources.onion, ToppingPosition.Full, width, height);
                     }
                 }
-                
+
+                // Mushrooms
                 if (!radioButtonMushroomsNone.Checked)
                 {
                     if (radioButtonMushroomsLeft.Checked)
                     {
-                        DrawToppingHalf(g, radioButtonMushroomsLeft, Properties.Resources.mushroom, "Left", halfWidth, height);
+                        DrawTopping(g, radioButtonMushroomsLeft, Properties.Resources.mushroom, ToppingPosition.LeftHalf, width, height);
                     }
                     else if (radioButtonMushroomsRight.Checked)
                     {
-                        DrawToppingHalf(g, radioButtonMushroomsRight, Properties.Resources.mushroom, "Right", halfWidth, height);
+                        DrawTopping(g, radioButtonMushroomsRight, Properties.Resources.mushroom, ToppingPosition.RightHalf, width, height);
                     }
                     else if (radioButtonMushroomsCenter.Checked)
                     {
-                        DrawToppingFull(g, radioButtonMushroomsCenter, Properties.Resources.mushroom, pizzaWithToppings.Width, height);
+                        DrawTopping(g, radioButtonMushroomsCenter, Properties.Resources.mushroom, ToppingPosition.Full, width, height);
                     }
                 }
-                
+
+                // Jalapenos
                 if (!radioButtonJalapenosNone.Checked)
                 {
                     if (radioButtonJalapenosLeft.Checked)
                     {
-                        DrawToppingHalf(g, radioButtonJalapenosLeft, Properties.Resources.jalapeno, "Left", halfWidth, height);
+                        DrawTopping(g, radioButtonJalapenosLeft, Properties.Resources.jalapeno, ToppingPosition.LeftHalf, width, height);
                     }
                     else if (radioButtonJalapenosRight.Checked)
                     {
-                        DrawToppingHalf(g, radioButtonJalapenosRight, Properties.Resources.jalapeno, "Right", halfWidth, height);
+                        DrawTopping(g, radioButtonJalapenosRight, Properties.Resources.jalapeno, ToppingPosition.RightHalf, width, height);
                     }
                     else if (radioButtonJalapenosCenter.Checked)
                     {
-                        DrawToppingFull(g, radioButtonJalapenosCenter, Properties.Resources.jalapeno, pizzaWithToppings.Width, height);
+                        DrawTopping(g, radioButtonJalapenosCenter, Properties.Resources.jalapeno, ToppingPosition.Full, width, height);
                     }
                 }
             }
@@ -263,27 +263,31 @@ namespace LAB_11._2_DANIEL_RIVAS
             pbPizza.Image = pizzaWithToppings; // Update Pizza image
         }
 
-        private void DrawToppingHalf(Graphics g, RadioButton radioButton, Image toppingImage, string side, int halfWidth, int height)
+        private void DrawTopping(Graphics g, RadioButton radioButton, Image toppingImage, ToppingPosition toppingPosition, int width, int height)
         {
             if (radioButton.Checked)
             {
-                Rectangle sourceRect = new Rectangle(0, 0, toppingImage.Width / 2, toppingImage.Height);
-                Rectangle destinationRect = new Rectangle(0, 0, halfWidth, height);
-
-                if (side == "Right")
+                switch (toppingPosition)
                 {
-                    sourceRect.X = toppingImage.Width / 2;
-                    destinationRect.X = halfWidth;
+                    case ToppingPosition.Full:
+                        g.DrawImage(toppingImage, new Rectangle(0, 0, width, height));
+                        break;
+                    case ToppingPosition.LeftHalf:
+                        DrawHalfTopping(g, toppingImage, new Rectangle(0, 0, width / 2, height), new Rectangle(0, 0, toppingImage.Width / 2, toppingImage.Height));
+                        break;
+                    case ToppingPosition.RightHalf:
+                        DrawHalfTopping(g, toppingImage, new Rectangle(width / 2, 0, width / 2, height), new Rectangle(toppingImage.Width / 2, 0, toppingImage.Width / 2, toppingImage.Height));
+                        break;
+                    default:
+                        MessageBox.Show($"Unexpected topping position: {toppingPosition}. Please select a valid option.", "Invalid Topping Position", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
                 }
-
-                g.DrawImage(toppingImage, destinationRect, sourceRect, GraphicsUnit.Pixel);
-            }
+            }  
         }
 
-        private void DrawToppingFull(Graphics g, RadioButton radioButton, Image toppingImage, int width, int height)
+        private void DrawHalfTopping(Graphics g, Image toppingImage, Rectangle destinationRect, Rectangle sourceRect)
         {
-            if (!radioButton.Checked) return;
-            g.DrawImage(toppingImage, new Rectangle(0, 0, width, height));
+            g.DrawImage(toppingImage, destinationRect, sourceRect, GraphicsUnit.Pixel);
         }
 
         private void InitializePizzaSizeComboBox()

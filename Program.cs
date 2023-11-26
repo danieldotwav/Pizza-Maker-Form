@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LAB_11._2_DANIEL_RIVAS
+namespace PizzaMakerForm
 {
     internal static class Program
     {

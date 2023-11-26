@@ -1,4 +1,4 @@
-﻿namespace LAB_11._2_DANIEL_RIVAS
+﻿namespace PizzaMakerForm
 {
     partial class Form1
     {
@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Header = new System.Windows.Forms.GroupBox();
+            this.ExitButton = new System.Windows.Forms.Button();
             this.HeaderLabel = new System.Windows.Forms.Label();
             this.PizzaSize = new System.Windows.Forms.ComboBox();
             this.CrustType = new System.Windows.Forms.ComboBox();
@@ -38,6 +39,8 @@
             this.CrustLabel = new System.Windows.Forms.Label();
             this.SizeLabel = new System.Windows.Forms.Label();
             this.groupBoxToppingsContainer = new System.Windows.Forms.GroupBox();
+            this.filledButtonRight = new System.Windows.Forms.PictureBox();
+            this.filledButtonLeft = new System.Windows.Forms.PictureBox();
             this.filledButtonCenter = new System.Windows.Forms.PictureBox();
             this.radioButtonEmptyToppingDisplay = new System.Windows.Forms.RadioButton();
             this.JalapenosLabel = new System.Windows.Forms.Label();
@@ -78,15 +81,14 @@
             this.itemsInCartLabel = new System.Windows.Forms.Label();
             this.ordersListBox = new System.Windows.Forms.ListBox();
             this.GrandTotalLabel = new System.Windows.Forms.Label();
-            this.filledButtonLeft = new System.Windows.Forms.PictureBox();
-            this.filledButtonRight = new System.Windows.Forms.PictureBox();
-            this.ExitButton = new System.Windows.Forms.Button();
             this.groupBoxItemsInCartText = new System.Windows.Forms.GroupBox();
             this.groupBoxGrandTotal = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Header.SuspendLayout();
             this.groupBoxSizeAndCrustContainer.SuspendLayout();
             this.groupBoxToppingsContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.filledButtonRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filledButtonLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.filledButtonCenter)).BeginInit();
             this.groupBoxTopping1.SuspendLayout();
             this.groupBoxTopping2.SuspendLayout();
@@ -94,8 +96,6 @@
             this.groupBoxTopping4.SuspendLayout();
             this.groupBoxTopping5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPizza)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.filledButtonLeft)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.filledButtonRight)).BeginInit();
             this.groupBoxItemsInCartText.SuspendLayout();
             this.groupBoxGrandTotal.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -113,6 +113,20 @@
             this.Header.TabIndex = 0;
             this.Header.TabStop = false;
             // 
+            // ExitButton
+            // 
+            this.ExitButton.BackColor = System.Drawing.Color.Gainsboro;
+            this.ExitButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ExitButton.Font = new System.Drawing.Font("Sitka Subheading", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitButton.ForeColor = System.Drawing.Color.Black;
+            this.ExitButton.Location = new System.Drawing.Point(845, 19);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(50, 25);
+            this.ExitButton.TabIndex = 11;
+            this.ExitButton.Text = "EXIT";
+            this.ExitButton.UseVisualStyleBackColor = false;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
             // HeaderLabel
             // 
             this.HeaderLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -120,7 +134,7 @@
             this.HeaderLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.HeaderLabel.Font = new System.Drawing.Font("Pleatures Demo", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HeaderLabel.ForeColor = System.Drawing.Color.Snow;
-            this.HeaderLabel.Location = new System.Drawing.Point(154, 32);
+            this.HeaderLabel.Location = new System.Drawing.Point(183, 29);
             this.HeaderLabel.Name = "HeaderLabel";
             this.HeaderLabel.Size = new System.Drawing.Size(604, 38);
             this.HeaderLabel.TabIndex = 1;
@@ -204,6 +218,28 @@
             this.groupBoxToppingsContainer.Size = new System.Drawing.Size(259, 207);
             this.groupBoxToppingsContainer.TabIndex = 4;
             this.groupBoxToppingsContainer.TabStop = false;
+            // 
+            // filledButtonRight
+            // 
+            this.filledButtonRight.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.filledButtonRight.BackColor = System.Drawing.Color.Transparent;
+            this.filledButtonRight.Location = new System.Drawing.Point(177, 57);
+            this.filledButtonRight.Name = "filledButtonRight";
+            this.filledButtonRight.Size = new System.Drawing.Size(15, 15);
+            this.filledButtonRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.filledButtonRight.TabIndex = 21;
+            this.filledButtonRight.TabStop = false;
+            // 
+            // filledButtonLeft
+            // 
+            this.filledButtonLeft.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.filledButtonLeft.BackColor = System.Drawing.Color.Transparent;
+            this.filledButtonLeft.Location = new System.Drawing.Point(127, 57);
+            this.filledButtonLeft.Name = "filledButtonLeft";
+            this.filledButtonLeft.Size = new System.Drawing.Size(15, 15);
+            this.filledButtonLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.filledButtonLeft.TabIndex = 20;
+            this.filledButtonLeft.TabStop = false;
             // 
             // filledButtonCenter
             // 
@@ -563,7 +599,7 @@
             // pbPizza
             // 
             this.pbPizza.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pbPizza.Location = new System.Drawing.Point(364, 136);
+            this.pbPizza.Location = new System.Drawing.Point(364, 117);
             this.pbPizza.Name = "pbPizza";
             this.pbPizza.Size = new System.Drawing.Size(250, 250);
             this.pbPizza.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -572,10 +608,11 @@
             // 
             // addToCartButton
             // 
-            this.addToCartButton.BackColor = System.Drawing.Color.Snow;
+            this.addToCartButton.BackColor = System.Drawing.Color.Gainsboro;
             this.addToCartButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addToCartButton.Font = new System.Drawing.Font("Sitka Subheading", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addToCartButton.Location = new System.Drawing.Point(442, 400);
+            this.addToCartButton.ForeColor = System.Drawing.Color.Black;
+            this.addToCartButton.Location = new System.Drawing.Point(442, 398);
             this.addToCartButton.Name = "addToCartButton";
             this.addToCartButton.Size = new System.Drawing.Size(100, 25);
             this.addToCartButton.TabIndex = 7;
@@ -618,42 +655,6 @@
             this.GrandTotalLabel.Size = new System.Drawing.Size(120, 24);
             this.GrandTotalLabel.TabIndex = 10;
             this.GrandTotalLabel.Text = "Grand Total: ";
-            // 
-            // filledButtonLeft
-            // 
-            this.filledButtonLeft.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.filledButtonLeft.BackColor = System.Drawing.Color.Transparent;
-            this.filledButtonLeft.Location = new System.Drawing.Point(127, 57);
-            this.filledButtonLeft.Name = "filledButtonLeft";
-            this.filledButtonLeft.Size = new System.Drawing.Size(15, 15);
-            this.filledButtonLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.filledButtonLeft.TabIndex = 20;
-            this.filledButtonLeft.TabStop = false;
-            // 
-            // filledButtonRight
-            // 
-            this.filledButtonRight.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.filledButtonRight.BackColor = System.Drawing.Color.Transparent;
-            this.filledButtonRight.Location = new System.Drawing.Point(177, 57);
-            this.filledButtonRight.Name = "filledButtonRight";
-            this.filledButtonRight.Size = new System.Drawing.Size(15, 15);
-            this.filledButtonRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.filledButtonRight.TabIndex = 21;
-            this.filledButtonRight.TabStop = false;
-            // 
-            // ExitButton
-            // 
-            this.ExitButton.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ExitButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ExitButton.Font = new System.Drawing.Font("Sitka Subheading", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitButton.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.ExitButton.Location = new System.Drawing.Point(845, 19);
-            this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(50, 25);
-            this.ExitButton.TabIndex = 11;
-            this.ExitButton.Text = "EXIT";
-            this.ExitButton.UseVisualStyleBackColor = false;
-            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // groupBoxItemsInCartText
             // 
@@ -705,6 +706,8 @@
             this.groupBoxSizeAndCrustContainer.PerformLayout();
             this.groupBoxToppingsContainer.ResumeLayout(false);
             this.groupBoxToppingsContainer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.filledButtonRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filledButtonLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.filledButtonCenter)).EndInit();
             this.groupBoxTopping1.ResumeLayout(false);
             this.groupBoxTopping1.PerformLayout();
@@ -717,8 +720,6 @@
             this.groupBoxTopping5.ResumeLayout(false);
             this.groupBoxTopping5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPizza)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.filledButtonLeft)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.filledButtonRight)).EndInit();
             this.groupBoxItemsInCartText.ResumeLayout(false);
             this.groupBoxItemsInCartText.PerformLayout();
             this.groupBoxGrandTotal.ResumeLayout(false);
@@ -732,7 +733,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox Header;
-        private System.Windows.Forms.Label HeaderLabel;
         private System.Windows.Forms.ComboBox PizzaSize;
         private System.Windows.Forms.ComboBox CrustType;
         private System.Windows.Forms.GroupBox groupBoxSizeAndCrustContainer;
@@ -785,6 +785,7 @@
         private System.Windows.Forms.GroupBox groupBoxItemsInCartText;
         private System.Windows.Forms.GroupBox groupBoxGrandTotal;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label HeaderLabel;
     }
 }
 
