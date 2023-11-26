@@ -1,12 +1,26 @@
 # Pizza-Maker-Form
 A Windows Forms application developed in C#. It allows users to create custom pizza orders by selecting various options like size, crust type, and toppings. The application dynamically updates the visual representation of the pizza as well as the pricing based on the user's selections.
 
+# Table of Contents
+1. [Description](#description)
+2. [Features](#features)
+3. [Techniques and Efficiencies](#techniques-and-efficiencies)
+4. [Getting Started](#getting-started)
+   - [Prerequisites](#prerequisites)
+   - [Installation](#installation)
+5. [Usage](#usage)
+6. [Contribution](#contribution)
+
 ## Features
+
+![PizzaMakerForm Screenshot](https://github.com/danieldotwav/Pizza-Maker-Form/issues/1)
 
 - **Dynamic Pizza Visualization:** Utilizes PictureBox to dynamically display the pizza's appearance as toppings and sizes are chosen.
 - **Custom Pricing Logic:** Implements complex pricing logic, accounting for different sizes, crust types, and combinations of toppings.
 - **Custom Control Drawing:** Enhances ListBox control to display order details and uses custom drawing to include separators for better readability.
 - **Efficient Image Manipulation:** Efficiently creates and manipulates images to represent pizza toppings and styles.
+- **Interactive Order Management**: The application features an intuitive order management system. On the right-hand side of the interface, users can view a list of all selected orders. If an order needs to be changed or removed, users can simply hover over the order text, click on it, and they will be prompted with the option to remove it from the inventory.
+
 
 ## Techniques and Efficiencies
 
@@ -34,7 +48,7 @@ A Windows Forms application developed in C#. It allows users to create custom pi
 
 1. **Select Pizza Size and Crust**: Choose from predefined sizes and crust types.
 2. **Customize Toppings**: Select toppings for either half or the whole pizza.
-3. **Review and Edit Orders**: Add orders to cart and view them in the ListBox. Orders can be edited or removed.
+3. **Manage Orders**: Orders are listed on the right-hand side. Hover and click on an order to remove it if needed.
 4. **Checkout**: Review the grand total and complete the order.
 
 ## Contribution
